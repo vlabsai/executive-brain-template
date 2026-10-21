@@ -1,23 +1,14 @@
 ---
 name: brain-query
-description: Responder perguntas sobre a base de um Brain executivo com fontes, datas e lacunas explícitas, ou conduzir uma conferência da resposta na mentoria. Usar para consulta, sem curadoria implícita.
+description: Responder sobre as notas do projeto com fontes e lacunas, e conferir uma afirmação na origem quando solicitado. Usar para consultas sem alterar a base implicitamente.
 ---
 
-# Consultar e conferir a base
+# Consultar e conferir
 
-Follow root `AGENTS.md`, [query routine](../../../routines/answer-from-base.md) and [workflow checks](../../../quality/workflow-checks.md). Use Portuguese with the operator.
+Siga [AGENTS.md](../../../AGENTS.md). Leia contexto.md, as notas relevantes e suas referências. Use somente fontes autorizadas e disponíveis. Não exija perfil completo ou agenda conectada para responder sobre um arquivo local.
 
-Search relevant repository notes and their source references. Clarify the project, period or intended decision only when ambiguity changes the answer:
+Esclareça assunto, período ou objetivo somente quando a ambiguidade mudar a resposta. Responda de forma curta com os fatos sustentados e suas fontes. Separe interpretação, proposta e informação ausente. Se houver conflito, preserve as versões e suas origens; não escolha uma confirmação que não existe.
 
-- “Sobre qual projeto ou período você quer saber?”
-- “Você precisa localizar um fato ou preparar uma decisão?”
+Para uma conferência da aula, escolha com a pessoa uma afirmação e encontre seu suporte na origem. Se houver diferença, corrija esse ponto e releia a resposta. Se for pedido guardar o resultado, use uma única nota em knowledge/consulta-encontro-1.md, com pergunta, fontes realmente lidas e a conferência ou correção observada. Não declare revisão que não aconteceu.
 
-Do not require a completed onboarding or a connected calendar for a question answerable from local files. Read authorized sources actually available in this task; do not silently expand to other accounts or repositories.
-
-Answer briefly with: supported facts and links/dates; interpretation or proposed next action when useful; missing/conflicting information and coverage limits. Cite the actual supporting note and source location. If evidence is absent, say what is missing and the smallest source/question that could resolve it. Tentative information does not erase a confirmed fact.
-
-For a lesson or requested verification, ask “Qual afirmação vamos conferir na origem?” Compare the response with that source and correct it. Record the question, sources actually read, answer, correction and reviewer in a dated `runs/` file using [run-log](../../../templates/run-log.md); use `runs/conferencia-do-encontro.md` when that exercise is prepared. Update [query checks](../../../quality/query-checks.md) only for cases actually performed.
-
-An ordinary consultation need not create a file. Do not modify canonical knowledge as a side effect; if the operator asks to incorporate a correction, switch to the curation workflow. Close by identifying what was found and what remains unknown.
-
-Refer to sources by descriptive names with the operator.
+Uma consulta comum não cria arquivo nem altera notas. Para incorporar fatos à base, use a skill de curadoria. Termine com o que foi encontrado e a informação que falta, sem presumir que houve ação externa.

@@ -1,9 +1,0 @@
-{
-  "skill": "brain-query",
-  "lesson": "Encontro 1 · consulta com fontes e reconhecimento de lacunas",
-  "prompt": "Use a skill brain-query para responder: qual é o orçamento aprovado do Projeto Alfa? Leia somente as fontes locais permitidas deste ensaio. Salve a resposta, as referências realmente usadas e as limitações em runs/resposta-do-exercicio.md, pois esta é uma conferência da aula. Não altere o conhecimento da base nem procure informações em outros sistemas.",
-  "files": {
-    "inbox/reuniao-alfa.md": "# Anotação da reunião · Projeto Alfa\n\nFonte fictícia: reunião de 20/10/2026. Recebida em 21/10/2026.\nMarina envia a proposta até 28/10/2026 às 17h, no fuso America/Sao_Paulo.\nAna revisa a estimativa até 26/10/2026, sem horário informado. O envio depende dessa revisão.\nO orçamento aprovado não foi informado.\n",
-    "knowledge/projects/alfa.md": "# Projeto Alfa\n\nEstado: revisado no cenário fictício de referência.\n\n## Fatos confirmados\n\nMarina envia a proposta até 28/10/2026 às 17h, America/Sao_Paulo.\nO envio depende da revisão da estimativa por Ana até 26/10/2026; horário não informado.\n\n## Lacunas\n\nOrçamento aprovado não informado.\n\n## Origem\n\nAnotação da reunião de 20/10/2026 em inbox/reuniao-alfa.md.\n"
-  }
-}

@@ -1,4 +1,0 @@
-interface:
-  display_name: "Preparar uma automação"
-  short_description: "Guiar uma rotina do teste manual ao agendamento"
-  default_prompt: "Use $brain-automate para estruturar e testar esta rotina antes de agendá-la."

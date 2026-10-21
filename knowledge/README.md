@@ -1,5 +1,5 @@
 # Conhecimento revisado
 
-Notas curadas devem permitir responder: o que sabemos, de onde veio, quando foi conferido e o que falta confirmar. Use [templates/source-note.md](../templates/source-note.md).
+Guarde notas curtas, com fatos, pendências, origem e revisão efetivamente feita. Comece com um arquivo por assunto diretamente nesta pasta. Crie subdivisões quando ajudarem a encontrar o conteúdo.
 
-Crie `projects/` para contexto de projetos e outras pastas somente quando houver conteúdo real para organizar. Não preencha o template com fatos do caso fictício da mentoria como se fossem fatos do cliente.
+As entradas originais ficam em [inbox](../inbox/README.md) ou na fonte autorizada indicada pela nota. Uma proposta não confirmada não substitui uma decisão já aceita. Respostas guardadas são consultas datadas; seus fatos continuam ligados às fontes.
