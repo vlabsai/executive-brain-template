@@ -25,6 +25,8 @@ search usa uma consulta vetorial tipada (`qmd query 'vec: …' --no-rerank`); le
 
 A coleção cobre apenas conhecimento aceito. Incluir uma entrada exige curadoria; copiar um arquivo para inbox/ não inicia processo. Domínios são conferidos na nota recuperada; QMD 2.8.3 não implementa o filtro de propriedades planas adotado pelo Brain. Acesso a públicos diferentes exige repositórios e índices separados. Não use similaridade como confirmação de fatos ou como limite de acesso.
 
+Na consulta tipada, a pontuação ordena candidatos e pode dar 1 ao primeiro colocado mesmo quando ele não responde à pergunta. Não a interprete como probabilidade de acerto. Se nenhuma nota sustentar o que foi perguntado, informe a ausência; não force uma resposta a partir do primeiro resultado.
+
 O índice é reconstruível, mas contém conteúdo privado. Após remoções, a atualização deixa de retornar os documentos removidos; ela não é uma comprovação de apagamento físico de todas as páginas do banco. Para descartar o índice ou os originais, use o procedimento de retenção do executor. Não reutilize este estado em outro cliente.
 
 ## Outro executor
