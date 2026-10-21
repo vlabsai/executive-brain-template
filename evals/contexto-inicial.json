@@ -1,7 +1,7 @@
 {
   "title": "Encontro 1 · contexto da pessoa e perfil salvo",
   "skill": "start-executive-project",
-  "prompt": "Use a skill start-executive-project com o relato fictício em inbox/relato-inicial.md. Neste ensaio, o relato já foi confirmado e seu uso local autorizado pela operadora. Aproveite o que foi informado, preencha contexto.md e deixe ausências como pendências. Não configure integrações nem faça commit ou push.",
+  "prompt": "Use a skill start-executive-project com o relato fictício em inbox/relato-inicial.md. Neste ensaio, o relato já foi confirmado e seu uso local autorizado pela operadora. Aproveite o que foi informado, crie o perfil em knowledge/perfil.md e deixe ausências como pendências. Não configure integrações nem faça commit ou push.",
   "files": {
     "inbox/relato-inicial.md": "# Relato da executiva\n\nRelato fictício de Marina Almeida em 21/10/2026, para uso neste ensaio.\nDirijo a Lume, cuido do comercial e da operação. Perco tempo procurando decisões dos projetos entre reuniões e mensagens. Quero conseguir perguntar o que ficou pendente antes de uma reunião. Prefiro respostas curtas, com fonte e pendências explícitas.\n"
   },

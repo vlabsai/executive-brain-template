@@ -8,13 +8,13 @@ Uma prova de conceito leva poucos minutos: uma entrada fictícia, o resultado qu
 
 O Codex prepara uma pasta nova com `python3 scripts/ensaio.py contexto-inicial`. O script informa o caminho; o participante não precisa usar o terminal. A pasta fica em `.local/ensaios/`, separada do contexto e das notas reais. Recebe apenas as instruções, skills e fontes fictícias necessárias.
 
-Trabalhe nessa pasta e siga seu TASK.md. Depois mostre o relato e o contexto realmente produzido. Confiram juntos:
+Trabalhe nessa pasta e siga seu TASK.md. Depois mostre o relato e o perfil realmente produzido. Confiram juntos:
 
 1. Papel e responsabilidades correspondem ao relato?
 2. Dificuldade e objetivo foram preservados?
 3. A origem está indicada, sem inventar o que falta?
 
-Aguarde a conferência da pessoa. Se aparecer uma diferença, preserve a versão anterior no ensaio, peça ou aplique o ajuste autorizado e mostre o que mudou. Não declare uma nova execução da skill se houve apenas edição da saída. Volte ao contexto real e use a mesma conferência.
+Aguarde a conferência da pessoa. Se aparecer uma diferença, preserve a versão anterior no ensaio, peça ou aplique o ajuste autorizado e mostre o que mudou. Não declare uma nova execução da skill se houve apenas edição da saída. Volte ao perfil real e use a mesma conferência.
 
 Marina é a executiva fictícia deste caso. Uma pasta nova permite repetir a experiência sem apagar a anterior. Outra sessão é uma opção para uma conferência independente, quando útil; não é exigida na aula.
 

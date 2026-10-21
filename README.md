@@ -1,49 +1,39 @@
-# IA na rotina executiva
+# Meu projeto de IA
 
-Um projeto pequeno para aprender IA organizando uma dificuldade real do trabalho. O Brain é a aplicação prática da [mentoria executiva](https://github.com/vlabsai/executive-ai-mentorship).
+Comece com uma dificuldade real do trabalho. O repositório guarda as fontes permitidas e o conhecimento que você conferiu.
 
-## Começar pela conversa
+## Começar
 
 Com o Codex aberto, peça:
 
 > Faça um fork de https://github.com/vlabsai/executive-brain-template na minha conta e clone minha cópia. Use-a como pasta de trabalho e leia suas instruções. Reutilize minha cópia se já existir. Aguarde meu pedido para iniciar a entrevista.
 
-Depois da preparação:
+Depois:
 
-> Use a skill start-executive-project para me entrevistar, esclarecer o que faltar e preencher meu contexto neste projeto.
+> Use a skill start-executive-project para me entrevistar, esclarecer o que faltar e organizar meu perfil neste projeto.
 
-Você responde ao que faltar e confere a síntese. A skill preenche contexto.md e preserva o relato permitido em inbox/, ou usa a fonte que você já forneceu.
+A skill aproveita o que você já contou, pergunta pelo que falta e apresenta uma síntese. Depois da conferência, cria o perfil preenchido em knowledge/perfil.md e preserva sua origem em inbox/, ou referencia a fonte que você já forneceu.
 
-## Três lugares para o trabalho
+## O que nasce com o uso
 
-| Lugar | Para que serve |
+| Pasta | Conteúdo |
 |---|---|
-| [contexto.md](contexto.md) | Quem você é, o que quer resolver e suas preferências |
-| [inbox/](inbox/README.md) | Relatos, textos e propostas que recebemos |
-| [knowledge/](knowledge/README.md) | Notas revisadas, com origem e pendências |
+| inbox/ | Relatos, textos e propostas que recebemos |
+| knowledge/ | Seu perfil e notas revisadas, com origem e pendências |
 
-As notas começam diretamente nessas pastas; crie subdivisões apenas quando ajudarem a encontrar algo.
+As pastas e notas são criadas quando a tarefa produzir conteúdo. Não há formulário vazio para preencher nem configuração operacional exigida para começar.
 
-## Começar por uma conversa
+Para organizar uma informação, peça a skill brain-curate. Para consultar as notas, peça brain-query. Para experimentar uma conferência curta, peça: **Leia evals/README.md e faça comigo o ensaio rápido de contexto inicial, usando apenas dados fictícios.**
 
-| Quero… | Pedido |
-|---|---|
-| Organizar uma informação | Use a skill brain-curate para propor uma nota com origem e lacunas a partir deste texto. |
-| Consultar minha base | Use a skill brain-query para responder esta pergunta com as fontes disponíveis. |
-| Experimentar uma conferência | Leia evals/README.md e faça comigo o ensaio rápido de contexto inicial, usando apenas dados fictícios. |
+## O que já vem no template
 
-As três skills vêm em .agents/skills/. Se o seletor não as mostrar, peça ao Codex que leia o arquivo SKILL.md correspondente nesta cópia; não presuma que a descoberta automática ocorreu. As [regras](AGENTS.md) ficam em um único arquivo. Os [exemplos](evals/README.md) são provas de conceito de poucos minutos.
+- [AGENTS.md](AGENTS.md): regras únicas para o assistente.
+- .agents/skills/: os três fluxos de entrevista, curadoria e consulta.
+- [evals/](evals/README.md): três exemplos curtos para experimentar e conferir.
+- scripts/ e .github/: preparação dos ensaios e verificação de manutenção.
 
-## Crescer com o uso
+Se a skill não aparecer no seletor, peça ao Codex que leia o SKILL.md correspondente nesta cópia. Agenda, briefing e automação entram quando houver uma necessidade concreta.
 
-Fontes de agenda, briefing e automação entram nos encontros em que forem necessárias. Não há configuração de integrações no ponto de partida. O Dot poderá consultar a base e apoiar rotinas depois de configurar e conferir os acessos no ambiente da pessoa.
+O template e seus forks públicos recebem apenas material genérico. Use dados fictícios para testar; mantenha conteúdo pessoal na cópia local ou em destino privado autorizado. Não envie dados pessoais ao fork público.
 
-O template e seus forks públicos contêm material genérico. Use dados fictícios para testar o fork. Contexto real pode ficar na cópia local ou em um destino privado autorizado; não o envie ao fork público. Não contém dados de cliente ou conteúdo do My Brain pessoal de Fabricio.
-
-## Manutenção do template
-
-Os scripts e o CI são para quem mantém o framework. O validador confere as três skills, exemplos e referências das instruções; não percorre fontes brutas e notas do executivo nem exige infraestrutura de encontros futuros.
-
-Execute python3 scripts/validate.py e python3 -m unittest discover -s scripts -p 'test_*.py' após mudanças no framework.
-
-Uma alteração no template não atualiza automaticamente as cópias já existentes. Atualize as instruções da cópia desejada preservando suas notas e seu contexto.
+Para manutenção do framework, execute python3 scripts/validate.py e python3 -m unittest discover -s scripts -p 'test_*.py'. Essa verificação não é exigida a cada nota e não comprova acesso operacional. Atualizações do template não alteram automaticamente cópias já existentes.

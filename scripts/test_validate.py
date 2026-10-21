@@ -24,7 +24,7 @@ class FrameworkTests(unittest.TestCase):
         self.assertTrue(any('Missing skill' in e for e in validate(self.root)))
 
     def test_raw_sources_and_executive_notes_do_not_break_framework_checks(self):
-        for name in ('.local/raw/source.md', 'inbox/source.md', 'knowledge/note.md', 'contexto.md'):
+        for name in ('.local/raw/source.md', 'inbox/source.md', 'knowledge/note.md', 'knowledge/perfil.md'):
             path = self.root/name
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_text('[Original reference](missing-export.md)')
@@ -41,11 +41,14 @@ class FrameworkTests(unittest.TestCase):
         self.assertTrue(any('Invalid local link' in e for e in validate(self.root)))
 
     def test_example_does_not_copy_personal_context_or_notes(self):
-        (self.root/'contexto.md').write_text('PRIVATE_CLIENT_CANARY')
+        (self.root/'knowledge').mkdir()
+        (self.root/'knowledge/perfil.md').write_text('PRIVATE_CLIENT_CANARY')
         (self.root/'knowledge/private.md').write_text('PRIVATE_CLIENT_CANARY')
         target = prepare('contexto-inicial', Path(self.temp.name)/'example', self.root)
         self.assertFalse(any('PRIVATE_CLIENT_CANARY' in p.read_text() for p in target.rglob('*') if p.is_file()))
         self.assertFalse((target/'evals').exists())
+        self.assertFalse((target/'contexto.md').exists())
+        self.assertFalse((target/'knowledge/perfil.md').exists())
         self.assertTrue((target/'inbox/relato-inicial.md').is_file())
 
     def test_existing_attempt_is_preserved(self):

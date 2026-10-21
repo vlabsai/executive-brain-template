@@ -1,6 +1,6 @@
 # Instruções do projeto
 
-Este é o ponto único de regras para o assistente. Leia contexto.md e apenas as fontes relevantes à tarefa. O projeto começa com contexto, entradas em inbox/ e notas revisadas em knowledge/. Amplie a estrutura quando uma necessidade concreta aparecer.
+Este é o ponto único de regras para o assistente. Leia knowledge/perfil.md quando ele já existir e apenas as fontes relevantes à tarefa. Os fluxos criam inbox/ para entradas e knowledge/ para conteúdo revisado conforme o trabalho acontece. Não crie formulários vazios ou arquivos de entrada duplicados. Amplie a estrutura quando uma necessidade concreta aparecer.
 
 ## Trabalhar com a pessoa
 

@@ -25,7 +25,6 @@ def prepare(case_name, destination=None, root=ROOT):
     shutil.copytree(root/'.agents/skills', target/'.agents/skills')
     seeds = {
         'README.md': '# Ensaio fictício\n\nLeia TASK.md. Use apenas os dados fictícios desta pasta.\n',
-        'contexto.md': '# Contexto do ensaio\n\nEstado: a preencher com dados fictícios.\n',
         'TASK.md': '# '+case['title']+'\n\n'+case['prompt']+'\n\nTrabalhe somente nesta pasta. Mostre os arquivos realmente salvos ou a resposta da consulta. A pessoa fará a conferência; não dê uma nota automática ao próprio resultado.\n\n## Conferência humana\n\n'+''.join('- '+point+'\n' for point in case['checks']),
     }
     for folder in ('inbox', 'knowledge'):

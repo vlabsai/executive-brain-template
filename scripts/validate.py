@@ -7,14 +7,13 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 SKILLS = ('start-executive-project', 'brain-curate', 'brain-query')
 CASES = ('contexto-inicial', 'prazo-em-conflito', 'consulta-sem-orcamento')
-REQUIRED = ('AGENTS.md', 'README.md', 'START_HERE.md', 'contexto.md',
-            'inbox/README.md', 'knowledge/README.md', 'evals/README.md')
+REQUIRED = ('AGENTS.md', 'README.md', 'evals/README.md')
 
 
 def validate(root=ROOT):
     root = Path(root).resolve()
     errors = [f'Missing {name}' for name in REQUIRED if not (root/name).is_file()]
-    documents = [root/name for name in REQUIRED if name != 'contexto.md']
+    documents = [root/name for name in REQUIRED]
     for name in SKILLS:
         folder = root/'.agents/skills'/name
         manifest = folder/'SKILL.md'

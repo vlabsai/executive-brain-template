@@ -5,7 +5,7 @@ description: Responder sobre as notas do projeto com fontes e lacunas, e conferi
 
 # Consultar e conferir
 
-Siga [AGENTS.md](../../../AGENTS.md). Leia contexto.md, as notas relevantes e suas referências. Use somente fontes autorizadas e disponíveis. Não exija perfil completo ou agenda conectada para responder sobre um arquivo local.
+Siga [AGENTS.md](../../../AGENTS.md). Leia knowledge/perfil.md quando existir, as notas relevantes e suas referências. Use somente fontes autorizadas e disponíveis. Não exija perfil completo ou agenda conectada para responder sobre um arquivo local.
 
 Esclareça assunto, período ou objetivo somente quando a ambiguidade mudar a resposta. Responda de forma curta com os fatos sustentados e suas fontes. Separe interpretação, proposta e informação ausente. Se houver conflito, preserve as versões e suas origens; não escolha uma confirmação que não existe.
 
