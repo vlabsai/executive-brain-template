@@ -7,7 +7,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 SKILLS = ('start-executive-project', 'brain-curate', 'brain-query')
 CASES = ('contexto-inicial', 'prazo-em-conflito', 'consulta-sem-orcamento')
-REQUIRED = ('AGENTS.md', 'README.md', 'evals/README.md')
+REQUIRED = ('AGENTS.md', 'README.md', 'inbox/README.md', 'knowledge/README.md', 'evals/README.md')
 
 
 def validate(root=ROOT):

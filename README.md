@@ -14,14 +14,14 @@ Depois:
 
 A skill aproveita o que você já contou, pergunta pelo que falta e apresenta uma síntese. Depois da conferência, cria o perfil preenchido em knowledge/perfil.md e preserva sua origem em inbox/, ou referencia a fonte que você já forneceu.
 
-## O que nasce com o uso
+## Pastas que já vêm no template
 
 | Pasta | Conteúdo |
 |---|---|
-| inbox/ | Relatos, textos e propostas que recebemos |
-| knowledge/ | Seu perfil e notas revisadas, com origem e pendências |
+| [inbox/](inbox/README.md) | Relatos, textos e propostas que recebemos |
+| [knowledge/](knowledge/README.md) | Seu perfil e notas revisadas, com origem e pendências |
 
-As pastas e notas são criadas quando a tarefa produzir conteúdo. Não há formulário vazio para preencher nem configuração operacional exigida para começar.
+As duas pastas já existem no clone, com um README curto explicando sua função. A entrevista e as próximas tarefas criam os arquivos preenchidos dentro delas.
 
 Para organizar uma informação, peça a skill brain-curate. Para consultar as notas, peça brain-query. Para experimentar uma conferência curta, peça: **Leia evals/README.md e faça comigo o ensaio rápido de contexto inicial, usando apenas dados fictícios.**
 

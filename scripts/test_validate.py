@@ -41,7 +41,7 @@ class FrameworkTests(unittest.TestCase):
         self.assertTrue(any('Invalid local link' in e for e in validate(self.root)))
 
     def test_example_does_not_copy_personal_context_or_notes(self):
-        (self.root/'knowledge').mkdir()
+        (self.root/'knowledge').mkdir(exist_ok=True)
         (self.root/'knowledge/perfil.md').write_text('PRIVATE_CLIENT_CANARY')
         (self.root/'knowledge/private.md').write_text('PRIVATE_CLIENT_CANARY')
         target = prepare('contexto-inicial', Path(self.temp.name)/'example', self.root)
