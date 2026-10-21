@@ -1,5 +1,24 @@
 # Primeiro uso com o mentor
 
+## Antes do encontro 1 · Preparação pelo mentor
+
+O mentor cria a cópia privada deste template, abre o checkout no computador de trabalho e confirma com o executivo o caminho local da pasta. A pasta do cliente fica separada do repositório comum da mentoria. Verifique que é possível ler e salvar um arquivo.
+
+Na aula 1, use somente quatro arquivos:
+
+| Arquivo | Papel na primeira construção |
+|---|---|
+| `inbox/session-01-sources.md` | Duas fontes pequenas e permitidas para a aula |
+| `profile/overview.md` | Contexto validado do executivo |
+| `knowledge/projects/<projeto>.md` | Nota com fatos, origem e lacunas |
+| `runs/session-01-check.md` | Pergunta, fontes usadas e revisão observada |
+
+O mentor prepara e apoia a edição; o executivo confere o conteúdo e aprende a encontrá-lo. O salvamento e o versionamento da cópia privada são conferidos ao encerrar. O laboratório fictício da mentoria usa `knowledge/projects/alfa.md`; não trate o caso Alfa como dado do cliente.
+
+Para conduzir essa construção por conversa, use **brain-context → brain-curate → brain-query**. O mentor confere antes se as skills aparecem no ambiente. Comece com o relato ou as fontes preparadas: a skill aproveita o texto, pergunta o que falta e salva nos caminhos acima. Mostre os arquivos ao executivo após cada construção. Veja [os nomes e exemplos de uso](README.md#começar-por-uma-conversa).
+
+Começar essa construção acompanhada não exige configurar toda a base. O catálogo de fontes será trabalhado no encontro 2; o acesso operacional do Dot será verificado antes do encontro 4. O estado permanece `template` até a configuração real. Se o ambiente não estiver disponível, use o laboratório fictício e registre o preparo do cliente como pendente.
+
 ## 1 · Escolher uma dificuldade real
 
 Registre em [profile/overview.md](profile/overview.md) onde a informação se perde e qual situação vamos melhorar: preparar uma reunião, localizar uma decisão ou acompanhar pendências. Uma necessidade pequena basta.

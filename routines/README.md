@@ -8,3 +8,5 @@ Estas instruções estão escritas para configuração e ensaio. Nenhuma está a
 - [Automatizar uma rotina](setup-automation.md): manual primeiro, agendamento e evidência depois.
 
 O Dot coordena a tarefa no ambiente com acesso ao repositório e às fontes necessárias. O mentor verifica esse caminho na aplicação. A memória da conversa não substitui esta base.
+
+Para preencher e aplicar essas rotinas por conversa, use as [skills do projeto](../README.md#começar-por-uma-conversa). Elas conduzem as perguntas; estes arquivos mantêm o contrato de cada rotina.

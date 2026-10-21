@@ -1,0 +1,4 @@
+interface:
+  display_name: "Preparar o dia"
+  short_description: "Montar um briefing com agenda, tarefas e contexto"
+  default_prompt: "Use $brain-briefing para preparar meu dia com as fontes autorizadas."

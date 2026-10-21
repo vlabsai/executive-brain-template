@@ -27,3 +27,11 @@ Apply AI concepts to the executive's actual information, calendar and daily work
 ## Data and portability
 
 Keep credentials, raw exports, attachments and machine-local settings out of version control. Use ignored `.local/` or an authorized external source. Do not copy another person's Brain or personal settings. Client-specific content belongs only in that client's private copy.
+
+## Guided workflows and completion
+
+Use the matching repository skill in `.agents/skills/` for context setup, curation, evidence-based queries, daily briefings and automation setup. Read `quality/workflow-checks.md` for the shared interaction and completion checks. Skills implement the routines; `AGENTS.md` remains the policy authority.
+
+Start from the supplied text and existing files. Ask only missing questions that change the result, normally one question or a small related group at a time. Keep the operator-facing conversation in Portuguese. Save authorized local drafts progressively; substantive acceptance is needed to promote a proposal to reviewed knowledge, not for every reversible file edit.
+
+After repository edits, run `python3 scripts/validate.py`, inspect the changed content and report saved paths, evidence and remaining gaps. For changes to the validator itself, also run `python3 -m unittest discover -s scripts -p 'test_*.py'`. Structural success is not behavioral or operational proof.

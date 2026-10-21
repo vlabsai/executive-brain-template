@@ -1,0 +1,4 @@
+interface:
+  display_name: "Consultar e conferir"
+  short_description: "Responder com fontes e reconhecer lacunas da base"
+  default_prompt: "Use $brain-query para responder esta pergunta com as fontes disponíveis."

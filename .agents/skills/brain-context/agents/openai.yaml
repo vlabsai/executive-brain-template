@@ -1,0 +1,4 @@
+interface:
+  display_name: "Organizar contexto inicial"
+  short_description: "Transformar um relato em contexto do executivo"
+  default_prompt: "Use $brain-context para organizar este relato e perguntar o que falta para começar."

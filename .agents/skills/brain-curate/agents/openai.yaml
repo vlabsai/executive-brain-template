@@ -1,0 +1,4 @@
+interface:
+  display_name: "Curar uma informação"
+  short_description: "Revisar uma entrada e atualizar a base com origem"
+  default_prompt: "Use $brain-curate para incorporar este texto à base, perguntando apenas o que faltar."
