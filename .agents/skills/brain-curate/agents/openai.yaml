@@ -1,4 +1,4 @@
 interface:
   display_name: "Curar uma informação"
-  short_description: "Revisar uma entrada e atualizar a base com origem"
-  default_prompt: "Use $brain-curate para incorporar este texto à base, perguntando apenas o que faltar."
+  short_description: "Transformar transcrições e atas em notas revisadas"
+  default_prompt: "Use $brain-curate para organizar esta transcrição numa proposta de nota com origem, decisões e pendências."

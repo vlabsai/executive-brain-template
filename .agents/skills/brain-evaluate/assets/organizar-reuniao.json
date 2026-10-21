@@ -1,0 +1,13 @@
+{
+  "title": "Curadoria de uma reunião",
+  "skill": "brain-curate",
+  "prompt": "Organize o texto da reunião em inbox/reuniao-atendimento.md na minha base. Quero encontrar depois as decisões, pendências e próximos passos. Todo o material deste ensaio é fictício.",
+  "files": {
+    "inbox/reuniao-atendimento.md": "# Transcrição parcial da reunião de atendimento\n\nExemplo fictício, reunião de 21/10/2026.\n\nDiego: A fila de solicitações ainda passa por mim. Decidimos testar um formulário único.\nCamila: Eu preparo a primeira versão até 26/10/2026.\nDiego: Falta decidir quem vai receber as mensagens depois do teste.\nCamila: Tenho uma estimativa de R$ 800 para o piloto, ainda não aprovada.\n"
+  },
+  "checks": [
+    "O pedido sem nome de skill seguiu o fluxo de curadoria?",
+    "A decisão e o próximo passo foram preservados, com as informações não confirmadas explícitas?",
+    "A proposta aguardou conferência antes de entrar em knowledge/ e manteve a origem ao ser incorporada?"
+  ]
+}
