@@ -19,6 +19,10 @@ Este registro comprova a estrutura do ponto de partida. Acesso do Dot, consultas
 
 ## Entrada pelo fork e clone
 
-A skill inicial agora pertence ao template e é explícita. O cliente abre sua cópia local antes da entrevista; a mesma conversa esclarece o contexto e preenche os arquivos. O template continua privado. A eval de contexto foi alinhada à skill inicial; a execução comportamental independente segue pendente.
+A skill inicial agora pertence ao template e é explícita. O cliente abre sua cópia local antes da entrevista; a mesma conversa esclarece o contexto e preenche os arquivos. Naquele ajuste o template ainda estava privado. A eval de contexto foi alinhada à skill inicial; a execução comportamental independente segue pendente.
 
 O GitHub confirmou private=true e allow_forking=false. A tentativa de habilitar fork neste repositório retornou: This organization does not allow private repository forking. A política da organização não foi alterada; a preparação de acesso/fork para o cliente continua pendente.
+
+## Publicação autorizada do template
+
+Após a instrução do usuário, o GitHub confirmou private=false, allow_forking=true e is_template=true. O repositório dos materiais da mentoria permanece privado. As quatro revisões anteriores foram conferidas como estrutura genérica e evals sintéticas, sem arquivos ou padrões de credenciais detectados. Nenhum fork de cliente foi criado neste registro.

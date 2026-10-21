@@ -38,4 +38,4 @@ Use [brain-context](../brain-context/SKILL.md) as the implementation guide, reus
 
 If substantive review is pending, save drafts with that status and retain accepted content. Do not mark content reviewed until supported by the actual exchange or the task's delegated review.
 
-Run `python3 scripts/validate.py`. End by showing the actual saved paths and explaining the role of each file. Distinguish local writes from commits or pushes; do not synchronize personal content or configure integrations/automations as a side effect. The next activity is curating a permitted piece of work, using the profile already saved.
+Run `python3 scripts/validate.py`. End by showing the actual saved paths and explaining the role of each file. The template and its public forks are public. Use synthetic data for a fork rehearsal. Distinguish local writes from commits or pushes; do not commit or push personal context to a public fork, and do not synchronize personal content or configure integrations/automations as a side effect. The next activity is curating a permitted piece of work, using the profile already saved.

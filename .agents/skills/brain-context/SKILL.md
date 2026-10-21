@@ -12,7 +12,7 @@ Extract what the supplied text already establishes. When the initial skill colle
 - “Qual situação da sua rotina mais precisa melhorar? Pode contar um caso recente?”
 - “Que resultado pequeno já faria diferença: encontrar uma decisão, preparar uma reunião ou acompanhar um prazo?”
 - “Qual é seu papel nesse trabalho e como prefere receber ajuda?”
-- “De qual fonte veio esse relato e o que podemos guardar nesta cópia privada?”
+- “De qual fonte veio esse relato e o que podemos guardar nesta cópia local?”
 - “Qual fonte pequena podemos usar primeiro? Onde ela está e quem confirmou seu uso?”
 
 Ask about time zone only when configuring it or when dates/time matter. Do not demand every source, calendar connection or technical setting to begin. The mentor handles the local checkout; do not ask the executive to learn Git.

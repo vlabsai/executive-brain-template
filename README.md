@@ -6,7 +6,7 @@ O Brain é o projeto de aplicação. Este template organiza o conhecimento curad
 
 ## Comece pequeno
 
-1. Com acesso ao template, faça um **fork para sua conta** e clone o fork no seu computador. O template permanece privado por enquanto; a conta precisa ter acesso e permissão para fazer o fork.
+1. A partir do template público, faça um **fork para sua conta** e clone o fork no seu computador. O template é público. Entre na sua conta do GitHub para criar o fork.
 2. Abra a pasta clonada como projeto no aplicativo.
 3. Acione **Preparar meu projeto**: `Use a skill start-executive-project para me entrevistar e preencher o contexto deste projeto.`
 4. Responda às perguntas e confira a síntese. Na mesma conversa, a skill salva perfil, objetivo, origem e registro do preparo na sua pasta.
@@ -62,3 +62,5 @@ A primeira verificação confere o template. A segunda exige configuração real
 O mesmo validador e seus testes rodam no GitHub a cada push e pull request. Regras comuns ficam em `AGENTS.md`, procedimentos em `routines/` e perguntas de condução nas skills.
 
 Para avaliar comportamento, use as [evals em workspace separado](evals/README.md). Elas ligam três aprendizados da primeira aula ao que foi efetivamente salvo: contexto, prazo conflitante e informação ausente. O script confere os artefatos; outra sessão ou pessoa revisa o conteúdo. Sem revisão, o resultado permanece pendente.
+
+O fork do template público também é público. Para o ensaio, use dados fictícios. Contexto real preenchido localmente não deve ser enviado ao fork público; a skill não faz commit ou push desses dados.

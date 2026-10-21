@@ -26,7 +26,7 @@ Apply AI concepts to the executive's actual information, calendar and daily work
 
 ## Data and portability
 
-Keep credentials, raw exports, attachments and machine-local settings out of version control. Use ignored `.local/` or an authorized external source. Do not copy another person's Brain or personal settings. Client-specific content belongs only in that client's private copy.
+Keep credentials, raw exports, attachments and machine-local settings out of version control. Use ignored `.local/` or an authorized external source. Do not copy another person's Brain or personal settings. Client-specific content belongs only in the client's authorized local working copy or a private destination. The public upstream and public forks contain generic framework material; do not commit or push personal context to them.
 
 ## Guided workflows and completion
 

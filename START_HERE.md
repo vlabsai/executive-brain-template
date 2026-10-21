@@ -2,7 +2,7 @@
 
 ## Antes da entrevista · sua cópia na máquina
 
-O cliente precisa ter acesso ao template, fazer o fork e clonar sua cópia. O template continua privado por enquanto; se o GitHub bloquear o fork, o mentor resolve a permissão antes desta etapa. Não use a conta ou a cópia de outra pessoa.
+O template é público. O cliente entra na própria conta do GitHub, faz o fork e clona sua cópia. Se já tiver a cópia correta, reutilize-a. Abra essa pasta como projeto antes de acionar a skill.
 
 Você pode fazer o fork pelo GitHub e clonar sua cópia. Com GitHub CLI autenticado, o comando abaixo faz o fork na sua conta e oferece a clonagem:
 
@@ -65,3 +65,5 @@ Mantenha o escopo nas fontes que realmente ajudam o problema prioritário. A age
 ## 5 · Aceitar a primeira versão
 
 Execute o validador estrutural, revise `quality/acceptance.md` e demonstre os usos com fontes acessíveis. Defina com o mentor o que foi comprovado e o que continua pendente. Não marque o projeto pronto só porque os arquivos existem.
+
+Para testar o fork público, use o caso fictício. Mantenha conteúdo real na cópia local ou em um destino privado autorizado; não o publique no fork.
