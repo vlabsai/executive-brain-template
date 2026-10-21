@@ -1,23 +1,39 @@
 # Primeiro uso com o mentor
 
-## Antes do encontro 1 · Preparação pelo mentor
+## Antes da entrevista · sua cópia na máquina
 
-O mentor confere ferramentas, conta, acesso ao template e destino permitido antes da aula. Durante o encontro, a pessoa conta sua necessidade; depois vocês criam a cópia privada, fazem a clonagem e salvam o perfil. O material da mentoria contém a skill start-executive-project para conduzir esse começo, antes de existir uma cópia do cliente. Se a cópia já existir, confiram e reutilizem o destino correto.
+O cliente precisa ter acesso ao template, fazer o fork e clonar sua cópia. O template continua privado por enquanto; se o GitHub bloquear o fork, o mentor resolve a permissão antes desta etapa. Não use a conta ou a cópia de outra pessoa.
 
-Na aula 1, use somente quatro arquivos:
+Você pode fazer o fork pelo GitHub e clonar sua cópia. Com GitHub CLI autenticado, o comando abaixo faz o fork na sua conta e oferece a clonagem:
 
-| Arquivo | Papel na primeira construção |
+```sh
+gh repo fork vlabsai/executive-brain-template --clone
+```
+
+Confira que a pasta corresponde ao seu fork e abra-a como projeto no aplicativo. Se já tiver a cópia correta, reutilize-a. Não repita fork ou clonagem. Nenhuma concessão de acesso ou mudança de visibilidade acontece pela skill inicial.
+
+## Uma chamada · entrevista e preenchimento
+
+Acione explicitamente **Preparar meu projeto**:
+
+> Use a skill start-executive-project para me entrevistar e preencher o contexto deste projeto.
+
+A skill lê o que já existe, pergunta o que faltar e esclarece ambiguidades. Você corrige ou confirma a síntese. Na mesma conversa ela preenche:
+
+| Arquivo | Resultado |
 |---|---|
-| `inbox/fontes-do-encontro.md` | Relato e informação pequena, permitidos para a aula |
-| `profile/overview.md` | Contexto validado do executivo |
-| `knowledge/projects/<projeto>.md` | Nota com fatos, origem e lacunas |
-| `runs/conferencia-do-encontro.md` | Pergunta, fontes usadas e revisão observada |
+| `profile/overview.md` | Seu papel, dificuldade, objetivo e preferências |
+| `config/brain.json` | Objetivo e configurações já definidas |
+| `inbox/relato-inicial.md` | Trecho permitido que fundamenta o perfil, com origem e data |
+| `runs/preparacao-inicial.md` | O que foi salvo, conferido e ficou pendente |
 
-O mentor prepara e apoia a edição; o executivo confere o conteúdo e aprende a encontrá-lo. O salvamento e o versionamento da cópia privada são conferidos ao encerrar. O laboratório fictício da mentoria usa `knowledge/projects/alfa.md`; não trate o caso Alfa como dado do cliente.
+Abra os arquivos ao concluir. A skill não pede outro acionamento para passar da entrevista ao preenchimento. Ela também não cria ou clona o repositório: essa preparação já aconteceu.
 
-Com a cópia pronta, use **brain-context → brain-curate → brain-query**. Reaproveite o contexto já coletado para salvar o perfil, sem repetir a entrevista. O mentor confere antes se as skills aparecem no ambiente. Comece com o relato ou as fontes preparadas: a skill aproveita o texto, pergunta o que falta e salva nos caminhos acima. Mostre os arquivos ao executivo após cada construção. Veja [os nomes e exemplos de uso](README.md#começar-por-uma-conversa).
+## Continuar a primeira aula
 
-Começar essa construção acompanhada não exige configurar toda a base. O catálogo de fontes será trabalhado no encontro 2; o acesso operacional do Dot será verificado antes do encontro 4. O estado permanece `template` até a configuração real. Se o ambiente não estiver disponível, use o laboratório fictício e registre o preparo do cliente como pendente.
+Escolha uma informação pequena e permitida do trabalho, use brain-curate para montar e revisar a nota e brain-query para fazer uma consulta conferida. No ensaio, o laboratório contém o relato fictício e a anotação da reunião em inbox/fontes-do-encontro.md, a nota em knowledge/projects/alfa.md e o registro da consulta em runs/conferencia-do-encontro.md.
+
+O estado permanece template até a configuração real. Catálogo completo, acesso operacional do Dot e automações avançam nos encontros próprios. Salvar os arquivos localmente não comprova essas conexões nem autoriza sincronização automática.
 
 ## 1 · Escolher uma dificuldade real
 

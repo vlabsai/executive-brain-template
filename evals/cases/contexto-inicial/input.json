@@ -1,7 +1,7 @@
 {
-  "skill": "brain-context",
+  "skill": "start-executive-project",
   "lesson": "Encontro 1 · contexto da pessoa e perfil salvo",
-  "prompt": "Use a skill brain-context com o relato em inbox/relato-executiva.md. Neste ensaio fictício, a operadora já confirmou o relato e autorizou guardar esse trecho local, o perfil e o objetivo. Prefere respostas curtas com fontes. Use o que já foi informado, deixe detalhes ausentes como pendências e salve o perfil em profile/overview.md. Registre a aplicação em runs/contexto-do-exercicio.md. Não configure acessos externos nem agendamentos.",
+  "prompt": "Use explicitamente a skill start-executive-project com o relato em inbox/relato-executiva.md. A pasta já está disponível. Neste ensaio fictício, a operadora já confirmou o relato e autorizou guardar esse trecho local, o perfil e o objetivo. Prefere respostas curtas com fontes. Use o que já foi informado, deixe detalhes ausentes como pendências e salve o perfil em profile/overview.md. Registre a aplicação em runs/contexto-do-exercicio.md. Não configure acessos externos nem agendamentos.",
   "files": {
     "inbox/relato-executiva.md": "# Relato da executiva\n\nRelato fictício de Marina Almeida em 21/10/2026, para uso neste ensaio.\nDirijo a Lume, cuido do comercial e da operação. Perco tempo procurando decisões dos projetos entre reuniões e mensagens. Quero conseguir perguntar o que ficou pendente antes de uma reunião. Prefiro respostas curtas, com fonte e pendências explícitas.\n"
   }

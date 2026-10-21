@@ -16,3 +16,9 @@ Este registro comprova a estrutura do ponto de partida. Acesso do Dot, consultas
 - Contexto inicial reaproveitado após a criação/clonagem da cópia privada, sem repetir a entrevista. Fontes são apresentadas ao operador com nomes descritivos.
 - Três cenários sintéticos de avaliação: contexto, prazo conflitante e orçamento ausente. A preparação separa workspace, gabarito e revisão. O resultado sem revisão permanece pending_review.
 - Dez testes passaram: cinco de estrutura/prontidão e cinco de isolamento, integridade e estados da avaliação. Esses testes validam o mecanismo; os três cenários ainda não foram executados como conversas independentes neste registro.
+
+## Entrada pelo fork e clone
+
+A skill inicial agora pertence ao template e é explícita. O cliente abre sua cópia local antes da entrevista; a mesma conversa esclarece o contexto e preenche os arquivos. O template continua privado. A eval de contexto foi alinhada à skill inicial; a execução comportamental independente segue pendente.
+
+O GitHub confirmou private=true e allow_forking=false. A tentativa de habilitar fork neste repositório retornou: This organization does not allow private repository forking. A política da organização não foi alterada; a preparação de acesso/fork para o cliente continua pendente.

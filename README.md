@@ -6,9 +6,12 @@ O Brain é o projeto de aplicação. Este template organiza o conhecimento curad
 
 ## Comece pequeno
 
-1. Com o mentor, confira os acessos e combine o destino. Na aula, a skill de início do material da mentoria pode conduzir contexto, criação da cópia privada e clonagem. Também é possível usar **Use this template → Create a new repository**.
-2. Siga [START_HERE.md](START_HERE.md) com o mentor.
-3. Na aula 1, abra a pasta já preparada pelo mentor, leia as fontes e salve perfil, nota e registro da conferência no mesmo projeto. Amplie a base conforme os encontros.
+1. Com acesso ao template, faça um **fork para sua conta** e clone o fork no seu computador. O template permanece privado por enquanto; a conta precisa ter acesso e permissão para fazer o fork.
+2. Abra a pasta clonada como projeto no aplicativo.
+3. Acione **Preparar meu projeto**: `Use a skill start-executive-project para me entrevistar e preencher o contexto deste projeto.`
+4. Responda às perguntas e confira a síntese. Na mesma conversa, a skill salva perfil, objetivo, origem e registro do preparo na sua pasta.
+
+Não é necessário instalar a skill no perfil pessoal nem ter o repositório da mentoria na máquina. Ela vem em `.agents/skills/` nesta cópia. Siga [START_HERE.md](START_HERE.md).
 
 Este é um modelo vazio. Nenhuma fonte está conectada, nenhum agendamento está salvo e nenhuma execução foi realizada. Não contém dados de clientes nem conteúdo do My Brain pessoal de Fabricio.
 
@@ -31,10 +34,11 @@ Este é um modelo vazio. Nenhuma fonte está conectada, nenhum agendamento está
 
 ## Começar por uma conversa
 
-Abra a cópia privada como projeto no aplicativo. As skills ficam junto do repositório, em `.agents/skills/`; não exigem instalar conteúdo na configuração pessoal. A descoberta local segue a [documentação oficial](https://learn.chatgpt.com/docs/build-skills). A disponibilidade no ambiente do Dot deve ser conferida pelo mentor; a existência da pasta não comprova que ele a carregou.
+Abra seu fork clonado como projeto no aplicativo. As skills ficam junto do repositório, em `.agents/skills/`; não exigem instalar conteúdo na configuração pessoal. A descoberta local segue a [documentação oficial](https://learn.chatgpt.com/docs/build-skills). A disponibilidade no ambiente do Dot deve ser conferida pelo mentor; a existência da pasta não comprova que ele a carregou.
 
 | Quando usar | Skill | O que fica pronto |
 |---|---|---|
+| “Quero iniciar meu projeto” | `$start-executive-project` | Entrevista, desambiguação e arquivos iniciais preenchidos |
 | “Quero organizar este contexto” | `$brain-context` | Perfil, objetivo e primeira entrada com origem |
 | “Recebi este texto; atualize a base” | `$brain-curate` | Proposta ou nota revisada e registro da alteração |
 | “O que sabemos sobre isto?” | `$brain-query` | Resposta com fontes e lacunas; registro quando for exercício |

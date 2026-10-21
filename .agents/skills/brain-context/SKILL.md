@@ -7,7 +7,7 @@ description: Transformar um relato inicial em perfil, objetivo e primeira fonte 
 
 Work in the client's active repository, following its root `AGENTS.md` and [workflow checks](../../../quality/workflow-checks.md). Read the current profile and configuration before asking questions. Operator-facing language is Portuguese.
 
-Extract what the supplied text already establishes. When bootstrap collected a reviewed summary before cloning, reuse it; do not restart the interview. Show a short summary of the difficulty and expected result. Ask the next unresolved question, using these prompts as a guide rather than a mandatory questionnaire:
+Extract what the supplied text already establishes. When the initial skill collected a reviewed summary in this working copy, reuse it; do not restart the interview. Show a short summary of the difficulty and expected result. Ask the next unresolved question, using these prompts as a guide rather than a mandatory questionnaire:
 
 - “Qual situação da sua rotina mais precisa melhorar? Pode contar um caso recente?”
 - “Que resultado pequeno já faria diferença: encontrar uma decisão, preparar uma reunião ou acompanhar um prazo?”
@@ -21,7 +21,7 @@ Build incrementally:
 
 - Update `profile/overview.md`, preserving known context and recording the speaker/source and confirmation date. Mark unresolved material as pending.
 - Record the agreed objective in `config/brain.json`; leave unknown settings empty. Keep `state=template` until configured readiness is established.
-- Save only the permitted, relevant source excerpt in a dated file under `inbox/`, with origin and original/read dates. For lesson 1, reuse `inbox/fontes-do-encontro.md` when prepared.
+- Save only the permitted, relevant source excerpt in a dated file under `inbox/`, with origin and original/read dates. For the initial interview, use `inbox/relato-inicial.md`; reuse `inbox/fontes-do-encontro.md` or another permitted source file when the task already provides it.
 - Register the source in `config/sources.json` using [the catalog contract](../../../sources/catalog.md). A pasted excerpt is a local source; it does not prove access to its original mailbox or calendar. Register it disabled until authorization and actual local reading are established. Unknown dates stay explicitly unknown in the note.
 
 Present the profile and proposed changes for substantive review. Within already authorized local editing, save a draft without a separate permission ceremony. Only label a statement confirmed/reviewed when the operator or authorized review actually supports it. End with links to saved files, remaining questions and the next small task. Record the application in `runs/` when files change.

@@ -8,7 +8,7 @@ import re
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-SKILLS = ('brain-context', 'brain-curate', 'brain-query', 'brain-briefing', 'brain-automate')
+SKILLS = ('start-executive-project', 'brain-context', 'brain-curate', 'brain-query', 'brain-briefing', 'brain-automate')
 REQUIRED = ['AGENTS.md', 'START_HERE.md', 'profile/overview.md', 'sources/catalog.md',
             'inbox/README.md', 'knowledge/README.md', 'commitments/source-map.md',
             'routines/answer-from-base.md', 'routines/curate-inbox.md',
