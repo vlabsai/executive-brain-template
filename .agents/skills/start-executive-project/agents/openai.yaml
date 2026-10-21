@@ -1,5 +1,5 @@
 interface:
-  display_name: "Preparar meu contexto"
+  display_name: "Montar contexto"
   short_description: "Entrevista guiada e contexto salvo na sua cópia local"
   default_prompt: "Use $start-executive-project para me entrevistar e preencher o contexto do meu projeto nesta pasta."
 policy:

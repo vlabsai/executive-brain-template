@@ -1,0 +1,4 @@
+interface:
+  display_name: "Avaliar um fluxo"
+  short_description: "Experimentar um fluxo com um caso e conferir o resultado"
+  default_prompt: "Use $brain-evaluate para avaliar a montagem do contexto com o caso fictício disponível."

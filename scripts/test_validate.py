@@ -5,8 +5,10 @@ import shutil
 import tempfile
 import unittest
 
-from validate import ROOT, validate
-from ensaio import prepare
+from validate import ROOT, validate, evaluation_module
+
+evaluations = evaluation_module()
+prepare = evaluations.prepare
 
 
 class FrameworkTests(unittest.TestCase):
@@ -44,35 +46,47 @@ class FrameworkTests(unittest.TestCase):
         (self.root/'knowledge').mkdir(exist_ok=True)
         (self.root/'knowledge/perfil.md').write_text('PRIVATE_CLIENT_CANARY')
         (self.root/'knowledge/private.md').write_text('PRIVATE_CLIENT_CANARY')
-        target = prepare('contexto-inicial', Path(self.temp.name)/'example', self.root)
+        target = prepare('montar-contexto', Path(self.temp.name)/'example', self.root)
         self.assertFalse(any('PRIVATE_CLIENT_CANARY' in p.read_text() for p in target.rglob('*') if p.is_file()))
         self.assertFalse((target/'evals').exists())
+        self.assertFalse((target/'.agents/skills/brain-evaluate').exists())
+        self.assertTrue((target/'inbox/README.md').is_file())
+        self.assertTrue((target/'knowledge/README.md').is_file())
         self.assertFalse((target/'contexto.md').exists())
         self.assertFalse((target/'knowledge/perfil.md').exists())
         self.assertTrue((target/'inbox/relato-inicial.md').is_file())
 
     def test_existing_attempt_is_preserved(self):
         target = Path(self.temp.name)/'example'
-        prepare('contexto-inicial', target, self.root)
+        prepare('montar-contexto', target, self.root)
         with self.assertRaises(FileExistsError):
-            prepare('contexto-inicial', target, self.root)
+            prepare('montar-contexto', target, self.root)
 
     def test_each_example_carries_its_human_checkpoints(self):
-        for name in ('contexto-inicial', 'prazo-em-conflito', 'consulta-sem-orcamento'):
+        for path in evaluations.case_paths(self.root):
+            name = path.stem
             target = prepare(name, Path(self.temp.name)/name, self.root)
-            case = json.loads((self.root/'evals'/(name+'.json')).read_text())
+            case = evaluations.load_case(name, self.root)
             task = (target/'TASK.md').read_text()
             self.assertTrue(all(point in task for point in case['checks']))
 
     def test_example_cannot_write_outside_its_working_folder(self):
-        path = self.root/'evals/contexto-inicial.json'
+        path = self.root/'.agents/skills/brain-evaluate/assets/montar-contexto.json'
         case = json.loads(path.read_text())
         case['files'] = {'../outside.md': 'Unexpected write'}
         path.write_text(json.dumps(case))
         self.assertTrue(validate(self.root))
         with self.assertRaises(ValueError):
-            prepare('contexto-inicial', Path(self.temp.name)/'example', self.root)
+            prepare('montar-contexto', Path(self.temp.name)/'example', self.root)
         self.assertFalse((Path(self.temp.name)/'outside.md').exists())
+
+    def test_new_case_needs_no_code_registration_or_context_specific_paths(self):
+        path = self.root/'.agents/skills/brain-evaluate/assets/outro-fluxo.json'
+        path.write_text(json.dumps(dict(title='Another flow', skill='brain-query', prompt='Read the fictional document.', files={'documents/example.txt':'Synthetic input'}, checks=['Uses the supplied source.'])))
+        self.assertEqual(validate(self.root), [])
+        target = prepare('outro-fluxo', Path(self.temp.name)/'new-example', self.root)
+        self.assertEqual((target/'documents/example.txt').read_text(), 'Synthetic input')
+        self.assertTrue((target/'.agents/skills/brain-query/SKILL.md').is_file())
 
 
 if __name__ == '__main__':

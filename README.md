@@ -23,14 +23,14 @@ A skill aproveita o que você já contou, pergunta pelo que falta e apresenta um
 
 As duas pastas já existem no clone, com um README curto explicando sua função. A entrevista e as próximas tarefas criam os arquivos preenchidos dentro delas.
 
-Para organizar uma informação, peça a skill brain-curate. Para consultar as notas, peça brain-query. Para experimentar uma conferência curta, peça: **Leia evals/README.md e faça comigo o ensaio rápido de contexto inicial, usando apenas dados fictícios.**
+Para organizar uma informação, peça a skill brain-curate. Para consultar as notas, peça brain-query. Para experimentar uma conferência curta, peça: **Use a skill brain-evaluate para avaliar a montagem do contexto com o caso fictício disponível.**
 
 ## O que já vem no template
 
 - [AGENTS.md](AGENTS.md): regras únicas para o assistente.
-- .agents/skills/: os três fluxos de entrevista, curadoria e consulta.
-- [evals/](evals/README.md): três exemplos curtos para experimentar e conferir.
-- scripts/ e .github/: preparação dos ensaios e verificação de manutenção.
+- .agents/skills/: os três fluxos de trabalho e a [avaliação de fluxos](.agents/skills/brain-evaluate/SKILL.md).
+- A avaliação reúne casos e script dentro da própria skill; começa pelo caso de montagem do contexto. Novos casos entram no mesmo pacote.
+- scripts/ e .github/: verificações de manutenção do template.
 
 Se a skill não aparecer no seletor, peça ao Codex que leia o SKILL.md correspondente nesta cópia. Agenda, briefing e automação entram quando houver uma necessidade concreta.
 

@@ -1,13 +1,20 @@
 """Check maintained framework files without traversing the executive's notes."""
 from pathlib import Path
-import json
+import importlib.util
 import re
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-SKILLS = ('start-executive-project', 'brain-curate', 'brain-query')
-CASES = ('contexto-inicial', 'prazo-em-conflito', 'consulta-sem-orcamento')
-REQUIRED = ('AGENTS.md', 'README.md', 'inbox/README.md', 'knowledge/README.md', 'evals/README.md')
+SKILLS = ('start-executive-project', 'brain-curate', 'brain-query', 'brain-evaluate')
+REQUIRED = ('AGENTS.md', 'README.md', 'inbox/README.md', 'knowledge/README.md')
+
+
+def evaluation_module(root=ROOT):
+    path = Path(root)/'.agents/skills/brain-evaluate/scripts/preparar_caso.py'
+    spec = importlib.util.spec_from_file_location('evaluation_cases', path)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
 
 
 def validate(root=ROOT):
@@ -39,17 +46,18 @@ def validate(root=ROOT):
             resolved = (path.parent/target.split('#')[0]).resolve()
             if not resolved.is_relative_to(root) or not resolved.exists():
                 errors.append(f'Invalid local link in {path.relative_to(root)}: {target}')
-    for name in CASES:
-        try:
-            case = json.loads((root/'evals'/(name+'.json')).read_text())
-            if case['skill'] not in SKILLS or len(case['checks']) != 3 or not case['prompt'] or not case['files']:
-                raise ValueError('Invalid example')
-            for target in case['files']:
-                path = Path(target)
-                if not path.parts or '..' in path.parts or path.is_absolute() or path.parts[0] not in ('inbox', 'knowledge'):
-                    raise ValueError('Example source must stay in inbox or knowledge')
-        except (OSError, ValueError, KeyError, TypeError) as exc:
-            errors.append(f'Invalid example {name}: {exc}')
+    try:
+        evaluations = evaluation_module(root)
+        paths = evaluations.case_paths(root)
+        if not paths:
+            errors.append('Evaluation skill needs a packaged example')
+        for path in paths:
+            try:
+                evaluations.load_case(path.stem, root)
+            except (OSError, ValueError, KeyError, TypeError) as exc:
+                errors.append(f'Invalid example {path.stem}: {exc}')
+    except OSError as exc:
+        errors.append(f'Missing evaluation preparer: {exc}')
     return errors
 
 

@@ -5,7 +5,7 @@ Este é o ponto único de regras para o assistente. Leia knowledge/perfil.md qua
 ## Trabalhar com a pessoa
 
 - Converse em português. Aproveite o que já foi informado e pergunte só o que muda o resultado, uma questão ou um pequeno grupo por vez.
-- Use as três skills em .agents/skills/: preparação inicial, curadoria e consulta. Cada skill contém seu procedimento completo.
+- Use as três skills de trabalho em .agents/skills/: montagem do contexto, curadoria e consulta. A skill brain-evaluate conduz as avaliações com casos fictícios. Cada fluxo contém seu procedimento completo.
 - Mostre uma síntese curta para conferência. Aproveite uma aceitação já dada; não peça confirmação para cada edição local reversível.
 - Salve apenas na cópia destinada ao cliente. Não grave contexto pessoal no upstream vlabsai/executive-brain-template nem no repositório comum da mentoria. Ensaios explicitamente fictícios podem usar uma pasta local isolada, sem Git.
 

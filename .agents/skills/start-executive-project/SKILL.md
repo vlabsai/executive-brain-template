@@ -3,7 +3,7 @@ name: start-executive-project
 description: Entrevistar o executivo e criar ou atualizar o perfil em knowledge/perfil.md na cópia já preparada do projeto. Acionar explicitamente no início ou para rever o contexto, aproveitando o relato existente.
 ---
 
-# Preparar meu contexto
+# Montar contexto
 
 Siga [AGENTS.md](../../../AGENTS.md). Trabalhe na cópia do cliente já preparada pelo Codex; confira o destino antes de salvar. Se estiver no upstream comum, use o [pedido de preparação](../../../README.md#começar). A entrevista não cria forks, clona repositórios ou muda acessos. Um ensaio explicitamente fictício pode usar uma pasta isolada sem Git.
 
