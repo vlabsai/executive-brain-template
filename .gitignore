@@ -1,0 +1,12 @@
+# Personal, raw and machine-local data
+.DS_Store
+.env
+.env.*
+!.env.example
+.local/
+raw/
+secrets/
+attachments/
+__pycache__/
+*.pyc
+.venv/
