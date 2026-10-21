@@ -6,7 +6,7 @@ O Brain é o projeto de aplicação. Este template organiza o conhecimento curad
 
 ## Comece pequeno
 
-1. Use **Use this template → Create a new repository** e crie uma cópia privada para o cliente.
+1. Com o mentor, confira os acessos e combine o destino. Na aula, a skill de início do material da mentoria pode conduzir contexto, criação da cópia privada e clonagem. Também é possível usar **Use this template → Create a new repository**.
 2. Siga [START_HERE.md](START_HERE.md) com o mentor.
 3. Na aula 1, abra a pasta já preparada pelo mentor, leia as fontes e salve perfil, nota e registro da conferência no mesmo projeto. Amplie a base conforme os encontros.
 
@@ -27,6 +27,7 @@ Este é um modelo vazio. Nenhuma fonte está conectada, nenhum agendamento está
 | [.agents/skills/](.agents/skills/) | Fluxos guiados que perguntam o que falta e produzem os documentos |
 | [runs/](runs/README.md) | Evidências de execução e revisão |
 | [quality/acceptance.md](quality/acceptance.md) | Critérios para aceitar a primeira versão |
+| [evals/](evals/README.md) | Exercícios fictícios para avaliar instruções em outra sessão |
 
 ## Começar por uma conversa
 
@@ -55,3 +56,5 @@ python3 -m unittest discover -s scripts -p 'test_*.py'
 A primeira verificação confere o template. A segunda exige configuração real e falha enquanto o projeto estiver vazio. Passar na validação estrutural não prova acesso, consulta nem automação em funcionamento; registre essas evidências em `runs/`.
 
 O mesmo validador e seus testes rodam no GitHub a cada push e pull request. Regras comuns ficam em `AGENTS.md`, procedimentos em `routines/` e perguntas de condução nas skills.
+
+Para avaliar comportamento, use as [evals em workspace separado](evals/README.md). Elas ligam três aprendizados da primeira aula ao que foi efetivamente salvo: contexto, prazo conflitante e informação ausente. O script confere os artefatos; outra sessão ou pessoa revisa o conteúdo. Sem revisão, o resultado permanece pendente.

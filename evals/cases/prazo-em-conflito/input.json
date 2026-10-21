@@ -1,0 +1,10 @@
+{
+  "skill": "brain-curate",
+  "lesson": "Encontro 1 · curadoria e diferença entre fato e sugestão",
+  "prompt": "Use a skill brain-curate para tratar inbox/mensagem-cliente.md sobre o Projeto Alfa. A mensagem é permitida para este ensaio. Ninguém confirmou uma mudança de prazo. Preserve a nota revisada enquanto não houver essa decisão; salve a proposta pendente em inbox/atualizacao-proposta.md e registre a aplicação em runs/curadoria-do-exercicio.md. Não envie mensagens e não altere agenda.",
+  "files": {
+    "inbox/reuniao-alfa.md": "# Anotação da reunião · Projeto Alfa\n\nFonte fictícia: reunião de 20/10/2026. Recebida em 21/10/2026.\nMarina envia a proposta até 28/10/2026 às 17h, no fuso America/Sao_Paulo.\nAna revisa a estimativa até 26/10/2026, sem horário informado. O envio depende dessa revisão.\nO orçamento aprovado não foi informado.\n",
+    "knowledge/projects/alfa.md": "# Projeto Alfa\n\nEstado: revisado no cenário fictício de referência.\n\n## Fatos confirmados\n\nMarina envia a proposta até 28/10/2026 às 17h, America/Sao_Paulo.\nO envio depende da revisão da estimativa por Ana até 26/10/2026; horário não informado.\n\n## Lacunas\n\nOrçamento aprovado não informado.\n\n## Origem\n\nAnotação da reunião de 20/10/2026 em inbox/reuniao-alfa.md.\n",
+    "inbox/mensagem-cliente.md": "# Mensagem posterior do cliente\n\nMensagem fictícia recebida em 21/10/2026, sobre a proposta do Projeto Alfa.\nAinda estamos aprovando o orçamento. Talvez a proposta possa ficar para o dia 30.\nNão houve confirmação de mudança do prazo da reunião anterior.\n"
+  }
+}

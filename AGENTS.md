@@ -35,3 +35,5 @@ Use the matching repository skill in `.agents/skills/` for context setup, curati
 Start from the supplied text and existing files. Ask only missing questions that change the result, normally one question or a small related group at a time. Keep the operator-facing conversation in Portuguese. Save authorized local drafts progressively; substantive acceptance is needed to promote a proposal to reviewed knowledge, not for every reversible file edit.
 
 After repository edits, run `python3 scripts/validate.py`, inspect the changed content and report saved paths, evidence and remaining gaps. For changes to the validator itself, also run `python3 -m unittest discover -s scripts -p 'test_*.py'`. Structural success is not behavioral or operational proof.
+
+For behavioral evaluation of instructions, use the relevant case in `evals/README.md`. Keep execution and review separate, use synthetic data and preserve previous runs. Automated artifact checks alone do not approve semantic behavior. Do not run these evals for every ordinary client note.

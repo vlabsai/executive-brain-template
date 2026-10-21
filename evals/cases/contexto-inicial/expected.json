@@ -1,0 +1,32 @@
+{
+  "checks": [
+    {
+      "kind": "modified",
+      "path": "profile/overview.md"
+    },
+    {
+      "kind": "exists",
+      "path": "runs/contexto-do-exercicio.md"
+    },
+    {
+      "kind": "json_equal",
+      "path": "config/brain.json",
+      "field": "state",
+      "value": "template"
+    }
+  ],
+  "rubric": [
+    [
+      "contexto-util",
+      "O perfil preserva papel, dificuldade e resultado do relato sem inventar informações."
+    ],
+    [
+      "perguntas-necessarias",
+      "A resposta aproveita os dados fornecidos e só pede uma informação quando ela muda o resultado."
+    ],
+    [
+      "origem-preservada",
+      "Perfil e registro permitem encontrar a origem e distinguem confirmações de pendências."
+    ]
+  ]
+}

@@ -16,6 +16,8 @@ Do not require a completed onboarding or a connected calendar for a question ans
 
 Answer briefly with: supported facts and links/dates; interpretation or proposed next action when useful; missing/conflicting information and coverage limits. Cite the actual supporting note and source location. If evidence is absent, say what is missing and the smallest source/question that could resolve it. Tentative information does not erase a confirmed fact.
 
-For a lesson or requested verification, ask “Qual afirmação vamos conferir na origem?” Compare the response with that source and correct it. Record the question, sources actually read, answer, correction and reviewer in a dated `runs/` file using [run-log](../../../templates/run-log.md); use `runs/session-01-check.md` when that exercise is prepared. Update [query checks](../../../quality/query-checks.md) only for cases actually performed.
+For a lesson or requested verification, ask “Qual afirmação vamos conferir na origem?” Compare the response with that source and correct it. Record the question, sources actually read, answer, correction and reviewer in a dated `runs/` file using [run-log](../../../templates/run-log.md); use `runs/conferencia-do-encontro.md` when that exercise is prepared. Update [query checks](../../../quality/query-checks.md) only for cases actually performed.
 
 An ordinary consultation need not create a file. Do not modify canonical knowledge as a side effect; if the operator asks to incorporate a correction, switch to the curation workflow. Close by identifying what was found and what remains unknown.
+
+Refer to sources by descriptive names with the operator.

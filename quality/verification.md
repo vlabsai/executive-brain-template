@@ -10,3 +10,9 @@
 - Os cenários de interação estão em `quality/workflow-checks.md`. Ainda não houve ensaio independente das conversas nem confirmação da descoberta das skills no ambiente do Dot de um cliente.
 
 Este registro comprova a estrutura do ponto de partida. Acesso do Dot, consultas reais, briefing e automação serão validados na cópia do cliente, com evidência de execução.
+
+## Atualização · aula em ciclos e evals
+
+- Contexto inicial reaproveitado após a criação/clonagem da cópia privada, sem repetir a entrevista. Fontes são apresentadas ao operador com nomes descritivos.
+- Três cenários sintéticos de avaliação: contexto, prazo conflitante e orçamento ausente. A preparação separa workspace, gabarito e revisão. O resultado sem revisão permanece pending_review.
+- Dez testes passaram: cinco de estrutura/prontidão e cinco de isolamento, integridade e estados da avaliação. Esses testes validam o mecanismo; os três cenários ainda não foram executados como conversas independentes neste registro.
