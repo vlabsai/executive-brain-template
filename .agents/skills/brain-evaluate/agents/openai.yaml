@@ -1,4 +1,4 @@
 interface:
   display_name: "Testar um fluxo · autoria"
   short_description: "Reproduzir casos e conferir skills durante sua manutenção"
-  default_prompt: "Use $brain-evaluate para testar o fluxo de montagem do contexto com o caso fictício disponível, como parte da manutenção das skills."
+  default_prompt: "Use $brain-evaluate para reproduzir um caso fictício da tarefa que vamos conferir e comparar o resultado real com os pontos do caso."

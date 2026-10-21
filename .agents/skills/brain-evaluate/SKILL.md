@@ -15,4 +15,6 @@ Execute a tarefa indicada, sem substituir a skill avaliada por uma resposta de r
 
 Se houver uma divergência, preserve a versão anterior no ensaio, corrija o ponto autorizado e compare novamente. Se não houver, encerre após a conferência. Não invente defeitos, conferências ou novas execuções. Outra sessão é opcional; não é necessário pontuar, criar manifesto ou relatório. Ao terminar, indique o caminho do ensaio e retome a cópia real.
 
+Nos casos do Alfa, curar-ata-alfa acompanha a proposta e sua incorporação após aceitação; consultar-alfa exercita a consulta com uma nota já revisada como entrada. Para ensaiar a sequência da aula, consulte também a nota que a curadoria acabou de produzir. Em uma sessão independente, forneça apenas o pedido, as regras, as skills de trabalho e as fontes; mantenha TASK.md, critérios e respostas de referência fora da pasta executora. Confira o resultado depois, sem antecipar o conteúdo esperado ao executor.
+
 Para acrescentar uma avaliação, adicione um JSON em [assets](assets/) com title, skill, prompt, files e checks. A entrada deve ser fictícia, a skill deve existir no projeto e os critérios devem descrever resultados observáveis. O script descobre os casos disponíveis; não é preciso editar listas no código. A quantidade de critérios depende da tarefa; os exemplos da aula usam poucos pontos.
