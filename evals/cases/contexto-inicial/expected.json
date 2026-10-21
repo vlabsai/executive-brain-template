@@ -6,7 +6,19 @@
     },
     {
       "kind": "exists",
-      "path": "runs/contexto-do-exercicio.md"
+      "path": "runs/preparacao-inicial.md"
+    },
+    {
+      "kind": "modified",
+      "path": "config/brain.json"
+    },
+    {
+      "kind": "modified",
+      "path": "config/sources.json"
+    },
+    {
+      "kind": "unchanged",
+      "path": "inbox/relato-executiva.md"
     },
     {
       "kind": "json_equal",

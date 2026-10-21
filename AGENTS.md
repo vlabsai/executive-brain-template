@@ -38,4 +38,6 @@ After repository edits, run `python3 scripts/validate.py`, inspect the changed c
 
 For behavioral evaluation of instructions, use the relevant case in `evals/README.md`. Keep execution and review separate, use synthetic data and preserve previous runs. Automated artifact checks alone do not approve semantic behavior. Do not run these evals for every ordinary client note.
 
+In the lesson, prefer the quick example in evals/README.md: one synthetic input, the actual saved result and three human checks. Correct a concrete discrepancy if one appears. Independent sessions and structured scoring are optional follow-up work; do not turn this proof of concept into a testing project for the executive.
+
 The executive starts in Codex with the natural-language preparation request in START_HERE.md. Codex prepares or reuses the client fork and local clone and uses that copy for subsequent file and shell operations. Do not turn this into terminal commands or manual project-opening instructions for the executive. Then the client invokes start-executive-project explicitly. That skill interviews and fills the existing project in one conversation; it does not perform repository setup or require a mentor-side skill. Keep real client context in the intended local copy. Do not change repository access or visibility as part of the interview.

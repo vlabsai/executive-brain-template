@@ -60,6 +60,6 @@ A primeira verificação confere o template. A segunda exige configuração real
 
 O mesmo validador e seus testes rodam no GitHub a cada push e pull request. Regras comuns ficam em `AGENTS.md`, procedimentos em `routines/` e perguntas de condução nas skills.
 
-Para avaliar comportamento, use as [evals em workspace separado](evals/README.md). Elas ligam três aprendizados da primeira aula ao que foi efetivamente salvo: contexto, prazo conflitante e informação ausente. O script confere os artefatos; outra sessão ou pessoa revisa o conteúdo. Sem revisão, o resultado permanece pendente.
+Para experimentar uma avaliação leve, peça: **“Leia evals/README.md e faça comigo o ensaio rápido de contexto inicial, usando apenas dados fictícios.”** O Codex prepara um exemplo separado do seu perfil, produz o resultado e mostra três pontos para vocês conferirem. Se houver erro, corrijam e comparem novamente. Veja [os ensaios e a repetição opcional em outra sessão](evals/README.md).
 
 O fork do template público também é público. Para o ensaio, use dados fictícios. Contexto real preenchido localmente não deve ser enviado ao fork público; a skill não faz commit ou push desses dados.

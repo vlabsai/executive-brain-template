@@ -26,3 +26,7 @@ O GitHub confirmou private=true e allow_forking=false. A tentativa de habilitar 
 ## Publicação autorizada do template
 
 Após a instrução do usuário, o GitHub confirmou private=false, allow_forking=true e is_template=true. O repositório dos materiais da mentoria permanece privado. As quatro revisões anteriores foram conferidas como estrutura genérica e evals sintéticas, sem arquivos ou padrões de credenciais detectados. Nenhum fork de cliente foi criado neste registro.
+
+## Ensaio leve para a aula
+
+O início de evals/README.md agora oferece um pedido em linguagem comum: produzir um perfil fictício, conferir três pontos com o participante e corrigir uma diferença quando houver. Não exige uma nova skill, relatório ou sessão adicional. A execução independente e a revisão estruturada continuam opcionais. O caso de contexto usa o registro padrão runs/preparacao-inicial.md e também verifica alteração da configuração, cadastro da fonte e preservação do relato. Este ajuste foi verificado como instruções e mecanismo; não registra uma nova conversa independente nem aplicação com cliente.
