@@ -1,11 +1,11 @@
 ---
 name: brain-evaluate
-description: Experimentar um fluxo do projeto com um caso fictício, observar o resultado e conduzir sua conferência. Usar para avaliar skills com exemplos leves, extensíveis a novas tarefas.
+description: Testar skills com casos fictícios durante a autoria ou manutenção dos fluxos. Usar quando os responsáveis pelo fluxo quiserem reproduzir uma tarefa, conferir o resultado e ajustar suas instruções.
 ---
 
 # Avaliar um fluxo
 
-Siga [AGENTS.md](../../../AGENTS.md). Esta skill conduz a avaliação; a skill indicada no caso executa a tarefa. Os casos e o preparador pertencem a este pacote, sem cadastro de casos na raiz.
+Siga [AGENTS.md](../../../AGENTS.md). Este recurso pertence à autoria e manutenção dos fluxos; não é uma etapa do executivo na mentoria. Acione-o quando houver um pedido de teste dos responsáveis pelo fluxo. A skill indicada no caso executa a tarefa. Os casos e o preparador pertencem a este pacote, sem cadastro de casos na raiz.
 
 Liste os casos com `python3 .agents/skills/brain-evaluate/scripts/preparar_caso.py --list`. Escolha pelo pedido da pessoa; com apenas um caso disponível, use-o. Pergunte qual deseja somente se houver ambiguidade entre os casos existentes.
 

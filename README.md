@@ -23,17 +23,17 @@ A skill aproveita o que você já contou, pergunta pelo que falta e apresenta um
 
 As duas pastas já existem no clone, com um README curto explicando sua função. A entrevista e as próximas tarefas criam os arquivos preenchidos dentro delas.
 
-Para organizar uma informação, peça a skill brain-curate. Para consultar as notas, peça brain-query. Para experimentar uma conferência curta, peça: **Use a skill brain-evaluate para avaliar a montagem do contexto com o caso fictício disponível.**
+Para organizar uma informação, peça a skill brain-curate. Para consultar as notas, peça brain-query.
 
 ## O que já vem no template
 
 - [AGENTS.md](AGENTS.md): regras únicas para o assistente.
-- .agents/skills/: os três fluxos de trabalho e a [avaliação de fluxos](.agents/skills/brain-evaluate/SKILL.md).
-- A avaliação reúne casos e script dentro da própria skill; começa pelo caso de montagem do contexto. Novos casos entram no mesmo pacote.
+- .agents/skills/: os três fluxos de trabalho do executivo e o recurso de [teste para os autores dos fluxos](.agents/skills/brain-evaluate/SKILL.md).
+- Os testes de autoria reúnem casos e script dentro da própria skill; começam pelo caso de montagem do contexto. Novos casos entram no mesmo pacote.
 - scripts/ e .github/: verificações de manutenção do template.
 
 Se a skill não aparecer no seletor, peça ao Codex que leia o SKILL.md correspondente nesta cópia. Agenda, briefing e automação entram quando houver uma necessidade concreta.
 
 O template e seus forks públicos recebem apenas material genérico. Use dados fictícios para testar; mantenha conteúdo pessoal na cópia local ou em destino privado autorizado. Não envie dados pessoais ao fork público.
 
-Para manutenção do framework, execute python3 scripts/validate.py e python3 -m unittest discover -s scripts -p 'test_*.py'. Essa verificação não é exigida a cada nota e não comprova acesso operacional. Atualizações do template não alteram automaticamente cópias já existentes.
+Quem mantém os fluxos pode usar brain-evaluate para reproduzir uma tarefa com dados fictícios, conferir a saída e ajustar a skill. Esse teste não é uma atividade do participante nem uma etapa automática a cada nota. Para manutenção do framework, execute python3 scripts/validate.py e python3 -m unittest discover -s scripts -p 'test_*.py'. Essa verificação não comprova acesso operacional. Atualizações do template não alteram automaticamente cópias já existentes.

@@ -5,7 +5,7 @@ Este é o ponto único de regras para o assistente. Leia knowledge/perfil.md qua
 ## Trabalhar com a pessoa
 
 - Converse em português. Aproveite o que já foi informado e pergunte só o que muda o resultado, uma questão ou um pequeno grupo por vez.
-- Use as três skills de trabalho em .agents/skills/: montagem do contexto, curadoria e consulta. A skill brain-evaluate conduz as avaliações com casos fictícios. Cada fluxo contém seu procedimento completo.
+- Use as três skills de trabalho em .agents/skills/: montagem do contexto, curadoria e consulta. A skill brain-evaluate atende aos responsáveis pela autoria e manutenção dos fluxos; não a apresente como uma tarefa do executivo. Cada fluxo contém seu procedimento completo.
 - Mostre uma síntese curta para conferência. Aproveite uma aceitação já dada; não peça confirmação para cada edição local reversível.
 - Salve apenas na cópia destinada ao cliente. Não grave contexto pessoal no upstream vlabsai/executive-brain-template nem no repositório comum da mentoria. Ensaios explicitamente fictícios podem usar uma pasta local isolada, sem Git.
 
@@ -27,6 +27,6 @@ Este é o ponto único de regras para o assistente. Leia knowledge/perfil.md qua
 
 Compare o que foi salvo com a fonte e mostre os caminhos reais. Uma consulta comum não precisa criar arquivo. Se a aula pedir para guardar uma consulta conferida, faça uma única nota em knowledge/, com a pergunta, fontes e correção observada.
 
-As evals são exemplos curtos: entrada fictícia, resultado real e três pontos conferidos pela pessoa. Corrija uma divergência se houver; não produza nota de aprovação automática, manifesto ou relatório.
+As evals de autoria são exemplos curtos: entrada fictícia, resultado real e três pontos conferidos por quem mantém o fluxo. Corrija uma divergência se houver; não produza nota de aprovação automática, manifesto ou relatório. A conferência das notas reais com o executivo continua sendo parte das três skills de trabalho.
 
 Ao alterar as instruções, skills ou scripts do template, rode python3 scripts/validate.py e os testes em scripts/. Não exija essa validação de manutenção para cada nota do executivo. Integridade dos arquivos não comprova comportamento ou acesso operacional.
