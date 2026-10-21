@@ -46,12 +46,19 @@ class FrameworkTests(unittest.TestCase):
         (self.root/'knowledge').mkdir(exist_ok=True)
         (self.root/'knowledge/perfil.md').write_text('PRIVATE_CLIENT_CANARY')
         (self.root/'knowledge/private.md').write_text('PRIVATE_CLIENT_CANARY')
+        (self.root/'knowledge/private-company').mkdir()
+        (self.root/'knowledge/private-company/README.md').write_text('PRIVATE_CLIENT_CANARY')
+        (self.root/'.local').mkdir(exist_ok=True)
+        (self.root/'.local/private.txt').write_text('PRIVATE_CLIENT_CANARY')
         target = prepare('montar-contexto', Path(self.temp.name)/'example', self.root)
         self.assertFalse(any('PRIVATE_CLIENT_CANARY' in p.read_text() for p in target.rglob('*') if p.is_file()))
         self.assertFalse((target/'evals').exists())
         self.assertFalse((target/'.agents/skills/brain-evaluate').exists())
         self.assertTrue((target/'inbox/README.md').is_file())
         self.assertTrue((target/'knowledge/README.md').is_file())
+        self.assertTrue((target/'knowledge/empresas/README.md').is_file())
+        self.assertFalse((target/'.local').exists())
+        self.assertFalse((target/'knowledge/private-company').exists())
         self.assertFalse((target/'contexto.md').exists())
         self.assertFalse((target/'knowledge/perfil.md').exists())
         self.assertTrue((target/'inbox/relato-inicial.md').is_file())
@@ -81,12 +88,15 @@ class FrameworkTests(unittest.TestCase):
         self.assertFalse((Path(self.temp.name)/'outside.md').exists())
 
     def test_new_case_needs_no_code_registration_or_context_specific_paths(self):
+        skill = self.root/'.agents/skills/outro-fluxo'
+        skill.mkdir()
+        (skill/'SKILL.md').write_text('---\nname: outro-fluxo\ndescription: Another workflow.\n---\nRead the supplied example.\n')
         path = self.root/'.agents/skills/brain-evaluate/assets/outro-fluxo.json'
-        path.write_text(json.dumps(dict(title='Another flow', skill='brain-query', prompt='Read the fictional document.', files={'documents/example.txt':'Synthetic input'}, checks=['Uses the supplied source.'])))
+        path.write_text(json.dumps(dict(title='Another flow', skill='outro-fluxo', prompt='Read the fictional document.', files={'documents/example.txt':'Synthetic input'}, checks=['Uses the supplied source.'])))
         self.assertEqual(validate(self.root), [])
         target = prepare('outro-fluxo', Path(self.temp.name)/'new-example', self.root)
         self.assertEqual((target/'documents/example.txt').read_text(), 'Synthetic input')
-        self.assertTrue((target/'.agents/skills/brain-query/SKILL.md').is_file())
+        self.assertTrue((target/'.agents/skills/outro-fluxo/SKILL.md').is_file())
 
 
 if __name__ == '__main__':

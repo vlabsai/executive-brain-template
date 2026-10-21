@@ -1,12 +1,15 @@
 """Check maintained framework files without traversing the executive's notes."""
 from pathlib import Path
 import importlib.util
+import json
 import re
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 SKILLS = ('start-executive-project', 'brain-curate', 'brain-query', 'brain-evaluate')
-REQUIRED = ('AGENTS.md', 'README.md', 'inbox/README.md', 'knowledge/README.md')
+REQUIRED = ('AGENTS.md', 'README.md', 'inbox/README.md', 'knowledge/README.md',
+            *('knowledge/'+name+'/README.md' for name in
+              ('empresas', 'pessoas', 'projetos', 'reunioes', 'temas')))
 
 
 def evaluation_module(root=ROOT):
@@ -19,8 +22,17 @@ def evaluation_module(root=ROOT):
 
 def validate(root=ROOT):
     root = Path(root).resolve()
-    errors = [f'Missing {name}' for name in REQUIRED if not (root/name).is_file()]
+    configurations = ('.obsidian/app.json', '.obsidian/core-plugins.json', '.obsidian/graph.json')
+    resources = ('scripts/search.py', '.agents/skills/brain-query/references/search.md', *configurations)
+    errors = [f'Missing {name}' for name in (*REQUIRED, *resources) if not (root/name).is_file()]
+    for name in configurations:
+        if (root/name).is_file():
+            try:
+                json.loads((root/name).read_text())
+            except json.JSONDecodeError as exc:
+                errors.append(f'Invalid vault configuration {name}: {exc}')
     documents = [root/name for name in REQUIRED]
+    documents.append(root/'.agents/skills/brain-query/references/search.md')
     for name in SKILLS:
         folder = root/'.agents/skills'/name
         manifest = folder/'SKILL.md'
@@ -40,7 +52,8 @@ def validate(root=ROOT):
         if not path.resolve().is_relative_to(root):
             errors.append(f'Instruction outside project: {path.relative_to(root)}')
             continue
-        for target in re.findall(r'\]\(([^)]+)\)', path.read_text()):
+        prose = re.sub(r'```.*?```|`[^`\n]*`', '', path.read_text(), flags=re.S)
+        for target in re.findall(r'\]\(([^)]+)\)', prose):
             if target.startswith(('https://', 'http://', '#', 'mailto:')):
                 continue
             resolved = (path.parent/target.split('#')[0]).resolve()

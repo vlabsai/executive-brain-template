@@ -42,11 +42,21 @@ def prepare(name, destination=None, root=ROOT):
     target = Path(destination).resolve() if destination else root/'.local/ensaios'/(name+'-'+uuid.uuid4().hex[:8])
     target.mkdir(parents=True, exist_ok=False)
     shutil.copyfile(root/'AGENTS.md', target/'AGENTS.md')
-    skill_path = Path('.agents/skills')/case['skill']
-    shutil.copytree(root/skill_path, target/skill_path)
-    for folder in ('inbox', 'knowledge'):
-        (target/folder).mkdir()
+    # Copy maintained workflow resources, never client notes or local state.
+    for skill in dict.fromkeys(('start-executive-project', 'brain-curate', 'brain-query', case['skill'])):
+        skill_path = Path('.agents/skills')/skill
+        shutil.copytree(root/skill_path, target/skill_path)
+    for folder in ('inbox', 'knowledge', 'knowledge/empresas', 'knowledge/pessoas',
+                   'knowledge/projetos', 'knowledge/reunioes', 'knowledge/temas'):
+        (target/folder).mkdir(parents=True, exist_ok=True)
         shutil.copyfile(root/folder/'README.md', target/folder/'README.md')
+    (target/'scripts').mkdir()
+    shutil.copyfile(root/'scripts/search.py', target/'scripts/search.py')
+    for filename in ('app.json', 'core-plugins.json', 'graph.json'):
+        path = root/'.obsidian'/filename
+        if path.is_file():
+            (target/'.obsidian').mkdir(exist_ok=True)
+            shutil.copyfile(path, target/'.obsidian'/filename)
     seeds = {
         'README.md': '# Ensaio fictício\n\nLeia TASK.md. Use somente os dados fictícios desta pasta.\n',
         'TASK.md': '# '+case['title']+'\n\n'+case['prompt']+'\n\nTrabalhe somente nesta pasta. Mostre o resultado realmente produzido. A conferência é humana; não dê uma nota automática ao próprio resultado.\n\n## Pontos de conferência\n\n'+''.join('- '+point+'\n' for point in case['checks']),

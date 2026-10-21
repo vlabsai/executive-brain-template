@@ -1,6 +1,6 @@
 # Instruções do projeto
 
-Este é o ponto único de regras para o assistente. Leia knowledge/perfil.md quando ele já existir e apenas as fontes relevantes à tarefa. O template já inclui inbox/ para entradas e knowledge/ para conteúdo revisado, cada uma com um README de orientação. Os fluxos preenchem essas pastas com conteúdo real. Preserve as duas pastas e seus READMEs. Não crie formulários vazios ou arquivos de entrada duplicados. Amplie a estrutura quando uma necessidade concreta aparecer.
+Este é o ponto único de regras para o assistente. Leia knowledge/perfil.md quando ele já existir e apenas as fontes relevantes à tarefa. inbox/ guarda entradas; knowledge/ guarda conteúdo revisado e as pastas comuns de empresas, pessoas, projetos, reuniões e temas. Preserve as pastas e seus READMEs. Siga as [convenções das notas](knowledge/README.md) para identidade, domínios, relações e origem. Não crie formulários vazios, entidades sem conteúdo ou arquivos de entrada duplicados.
 
 ## Trabalhar com a pessoa
 
@@ -23,6 +23,16 @@ Este é o ponto único de regras para o assistente. Leia knowledge/perfil.md qua
 - Pedidos de envio de mensagens, alteração de agenda e outros sistemas externos precisam de autorização específica. Ter um arquivo ou uma instrução não comprova integração ou automação funcionando.
 - Agenda e tarefas continuam autoritativas nas fontes operacionais escolhidas. Ao trabalhar com datas relativas, confirme a data e o fuso necessários. Não exija essas configurações para uma consulta local que não depende delas.
 - Não guarde credenciais ou exportações brutas no Git. Use .local/ para material local que deva ficar fora da publicação. Não faça commit ou push de contexto pessoal para o template ou um fork público.
+
+## Leitura, busca e sincronização
+
+O vault do Obsidian é a raiz desta cópia. As relações são links Markdown entre notas existentes; proximidade na busca não cria uma relação factual. Preserve o id ao mover uma nota e atualize os links afetados.
+
+Dot coordena; o executor lê estas regras e a skill da tarefa. Cada executor precisa de seus próprios acessos, ferramentas e índice. Clonar o projeto não conecta contas nem instala modelos. Para busca, leia a [preparação do QMD](.agents/skills/brain-query/references/search.md). O assistente executa os comandos; o executivo conversa normalmente. Se a busca não estiver preparada, informe a limitação e consulte os arquivos quando isso bastar.
+
+Antes de responder pela busca, atualize o índice; depois, abra as notas atuais e confira o domínio. A coleção padrão cobre somente knowledge/, sem READMEs. Não incorpore propostas de inbox/ a respostas como fatos aceitos. Após uma alteração aceita ou um pull, atualize a busca antes de usá-la. Se a atualização falhar, não use trechos antigos.
+
+Ao sincronizar no escopo autorizado: confira o remoto e sua visibilidade, preserve alterações pendentes, resolva conflitos e publique somente os arquivos permitidos no repositório privado. Não use pull destrutivo nem force push. Diga se o trabalho ficou local ou chegou ao remoto. Git sincroniza notas; modelos, índices e originais ignorados precisam do armazenamento e backup próprios do executor.
 
 ## Conferência proporcional
 
