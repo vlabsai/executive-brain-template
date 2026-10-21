@@ -5,7 +5,7 @@ description: Entrevistar o executivo e preencher o contexto inicial na cópia do
 
 # Preparar meu projeto
 
-Run in the executive's local working copy, after the client has forked and cloned the template and opened that folder as a project. Follow root `AGENTS.md` and [workflow checks](../../../quality/workflow-checks.md). Speak Portuguese. This is one explicitly invoked conversation: interview, clarify, review and save. Do not ask the client to invoke a second skill or restart the interview to advance.
+Run in the executive's local working copy, after Codex has prepared or reused the client fork and clone. Resolve file and shell operations against that copy; do not assume the conversation's original folder is the intended project. Follow root `AGENTS.md` and [workflow checks](../../../quality/workflow-checks.md). Speak Portuguese. This is one explicitly invoked conversation: interview, clarify, review and save. Do not ask the client to invoke a second skill or restart the interview to advance.
 
 ## Confirm the working folder
 

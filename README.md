@@ -6,10 +6,9 @@ O Brain é o projeto de aplicação. Este template organiza o conhecimento curad
 
 ## Comece pequeno
 
-1. A partir do template público, faça um **fork para sua conta** e clone o fork no seu computador. O template é público. Entre na sua conta do GitHub para criar o fork.
-2. Abra a pasta clonada como projeto no aplicativo.
-3. Acione **Preparar meu projeto**: `Use a skill start-executive-project para me entrevistar e preencher o contexto deste projeto.`
-4. Responda às perguntas e confira a síntese. Na mesma conversa, a skill salva perfil, objetivo, origem e registro do preparo na sua pasta.
+1. Com o Codex aberto, cole o [pedido de preparação](START_HERE.md). O Codex faz o fork, clona sua cópia e usa essa pasta para continuar.
+2. Depois da preparação, acione **Preparar meu projeto**: `Use a skill start-executive-project para me entrevistar e preencher o contexto deste projeto.`
+3. Responda às perguntas e confira a síntese. Na mesma conversa, a skill salva perfil, objetivo, origem e registro do preparo na sua pasta.
 
 Não é necessário instalar a skill no perfil pessoal nem ter o repositório da mentoria na máquina. Ela vem em `.agents/skills/` nesta cópia. Siga [START_HERE.md](START_HERE.md).
 
@@ -34,7 +33,7 @@ Este é um modelo vazio. Nenhuma fonte está conectada, nenhum agendamento está
 
 ## Começar por uma conversa
 
-Abra seu fork clonado como projeto no aplicativo. As skills ficam junto do repositório, em `.agents/skills/`; não exigem instalar conteúdo na configuração pessoal. A descoberta local segue a [documentação oficial](https://learn.chatgpt.com/docs/build-skills). A disponibilidade no ambiente do Dot deve ser conferida pelo mentor; a existência da pasta não comprova que ele a carregou.
+Depois que o Codex preparar sua cópia, continue a conversa usando as skills incluídas nela. As skills ficam junto do repositório, em `.agents/skills/`; não exigem instalar conteúdo na configuração pessoal. A descoberta local segue a [documentação oficial](https://learn.chatgpt.com/docs/build-skills). A disponibilidade no ambiente do Dot deve ser conferida pelo mentor; a existência da pasta não comprova que ele a carregou.
 
 | Quando usar | Skill | O que fica pronto |
 |---|---|---|

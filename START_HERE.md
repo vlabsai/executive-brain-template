@@ -1,16 +1,14 @@
 # Primeiro uso com o mentor
 
-## Antes da entrevista · sua cópia na máquina
+## Comece com um pedido no Codex
 
-O template é público. O cliente entra na própria conta do GitHub, faz o fork e clona sua cópia. Se já tiver a cópia correta, reutilize-a. Abra essa pasta como projeto antes de acionar a skill.
+Com o Codex aberto, cole este pedido na conversa:
 
-Você pode fazer o fork pelo GitHub e clonar sua cópia. Com GitHub CLI autenticado, o comando abaixo faz o fork na sua conta e oferece a clonagem:
+> Faça um fork de https://github.com/vlabsai/executive-brain-template na minha conta e clone minha cópia. Use-a como pasta de trabalho e leia suas instruções. Reutilize minha cópia se já existir. Aguarde meu pedido para iniciar a entrevista.
 
-```sh
-gh repo fork vlabsai/executive-brain-template --clone
-```
+O Codex prepara a cópia e informa onde ela ficou. Se precisar de login ou de uma escolha sobre o destino, ele orienta apenas essa parte. O executivo acompanha a preparação pela conversa.
 
-Confira que a pasta corresponde ao seu fork e abra-a como projeto no aplicativo. Se já tiver a cópia correta, reutilize-a. Não repita fork ou clonagem. Nenhuma concessão de acesso ou mudança de visibilidade acontece pela skill inicial.
+A entrevista começa depois, com a cópia preparada.
 
 ## Uma chamada · entrevista e preenchimento
 
