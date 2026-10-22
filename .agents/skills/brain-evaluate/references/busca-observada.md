@@ -10,7 +10,7 @@ QMD 2.8.3, embeddings embeddinggemma-300M-Q8_0 e reranker Qwen3-0.6b-Q8_0, no me
 | Híbrida: BM25 + vetor + RRF | 7 de 8 | 8 de 8 | 1,21 s |
 | Híbrida com re-ranking | 7 de 8 | 8 de 8 | 2,72 s |
 
-Duas passagens anteriores com os mesmos comandos reproduziram as posições observadas. Os tempos variam com inicialização e cache. O reranker obtido tem 639.153.184 bytes; o modelo de embeddings tem 333.590.944 bytes. Nenhum modelo de expansão foi necessário.
+Duas passagens anteriores com a mesma amostra reproduziram as posições observadas; a passagem final preserva a pergunta completa como intent. Os tempos variam com inicialização e cache. O reranker obtido tem 639.153.184 bytes; o modelo de embeddings tem 333.590.944 bytes. Nenhum modelo de expansão foi necessário.
 
 Na pergunta sobre a passagem de atendimentos, a híbrida trouxe a reunião pertinente para primeiro lugar. Na pergunta sobre aprovação do orçamento do Alfa, todos os modos deixaram a nota pertinente em segundo: vetor priorizou o Beta, e a híbrida e o reranker priorizaram o hotel pessoal, que menciona o orçamento do Alfa para negar a relação. Esse caso continua exigindo abrir as notas, conferir domínio e preservar a ausência de aprovação. O re-ranking não demonstrou ganho adicional nesse recorte.
 
