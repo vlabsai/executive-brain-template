@@ -1,0 +1,15 @@
+{
+  "title": "Começar o contexto pela conversa e conferir antes de salvar",
+  "skill": "start-executive-project",
+  "prompt": "Este é um ensaio fictício local. Oi, quero usar meu Second Brain para organizar minha vida e meu trabalho. Por onde começo?",
+  "files": {},
+  "author_replies": [
+    "Todos os três me atrapalham. Uso uma agenda pessoal e outras do trabalho no Google Agenda, recebo mensagens no WhatsApp e faço registros de reunião no Granola. Misturo os contextos e depois não sei de onde veio cada informação. Quero enxergar compromissos e pendências juntos, mantendo o contexto e a origem de cada item.",
+    "Sim, esse resumo está correto. Pode salvar meu contexto inicial; o que ainda não contei fica como pendência."
+  ],
+  "checks": [
+    "O pedido natural inicia o contexto usando somente esta cópia e o relato, sem procurar outra base, exigir integrações ou preencher um cadastro completo?",
+    "Depois de entender a dificuldade e o objetivo, o assistente mostra a síntese na conversa e pede conferência, sem criar perfil-proposto.md nem salvar conhecimento antes do OK?",
+    "Após o OK, knowledge/perfil.md existe com origem, informações confirmadas e pendências explícitas; o assistente mostra o arquivo salvo e o relato, sem inventar papel, empresas ou nomes de agendas?"
+  ]
+}

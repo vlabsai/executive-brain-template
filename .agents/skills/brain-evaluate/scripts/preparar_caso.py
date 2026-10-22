@@ -27,8 +27,8 @@ def load_case(name, root=ROOT):
         raise ValueError('The evaluated skill must exist in this project')
     if not isinstance(case.get('checks'), list) or not case['checks'] or not all(isinstance(c, str) and c.strip() for c in case['checks']):
         raise ValueError('A case needs human checkpoints')
-    if not isinstance(case.get('files'), dict) or not case['files']:
-        raise ValueError('A case needs fictional source files')
+    if not isinstance(case.get('files'), dict):
+        raise ValueError('A case needs a files object; conversation-only cases may leave it empty')
     for name, text in case['files'].items():
         path = Path(name)
         if not path.parts or path.is_absolute() or '..' in path.parts or path.parts[0] in ('.git', '.agents') or name in ('AGENTS.md', 'README.md', 'TASK.md') or not isinstance(text, str):

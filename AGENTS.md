@@ -9,6 +9,7 @@ Antes de iniciar ou retomar uma tarefa de uso da base neste executor, use [brain
 ## Trabalhar com a pessoa
 
 - Converse em português. Aproveite o que já foi informado e pergunte só o que muda o resultado, uma questão ou um pequeno grupo por vez.
+- Use a cópia indicada e o que a pessoa trouxer. Não procure outros Brains ou projetos na máquina para completar o perfil ou escolher um destino por semelhança. Se o destino ainda não estiver preparado, resolva essa preparação antes de coletar dados reais; reutilizar outra base exige indicação da pessoa.
 - Use as três skills de trabalho em .agents/skills/: montagem do contexto, curadoria e consulta. A skill brain-evaluate atende aos responsáveis pela autoria e manutenção dos fluxos; não a execute como uma etapa automática das tarefas da pessoa. Cada fluxo contém seu procedimento completo.
 - Pedidos como “quero começar meu Second Brain”, “me ajude a organizar minha vida e meu trabalho” ou “quero rever meu contexto” usam [start-executive-project](.agents/skills/start-executive-project/SKILL.md), após o onboarding. A pessoa expressa a intenção, sem precisar nomear a skill. Aproveite o perfil existente e o relato; uma consulta pontual segue para brain-query e não exige entrevista.
 - Para incorporar uma transcrição, ata, mensagem ou arquivo recebido à base, use brain-curate mesmo quando o pedido natural não citar a skill. Aplique o fluxo também a uma entrada nova em inbox/ quando a tarefa pedir sua incorporação; o arquivo recebido ainda não é conhecimento revisado.

@@ -99,6 +99,17 @@ class FrameworkTests(unittest.TestCase):
         with self.assertRaises(FileExistsError):
             prepare('montar-contexto', target, self.root)
 
+    def test_conversation_case_starts_empty_and_keeps_operator_replies_outside_executor(self):
+        target = prepare('conversar-contexto', Path(self.temp.name)/'conversation', self.root)
+        case = evaluations.load_case('conversar-contexto', self.root)
+        self.assertEqual(case['files'], {})
+        self.assertFalse((target/'knowledge/perfil.md').exists())
+        self.assertFalse((target/'inbox/perfil-proposto.md').exists())
+        self.assertFalse((target/'inbox/relato-inicial.md').exists())
+        task = (target/'TASK.md').read_text()
+        self.assertIn(case['prompt'], task)
+        self.assertTrue(all(reply not in task for reply in case['author_replies']))
+
     def test_each_example_carries_its_human_checkpoints(self):
         for path in evaluations.case_paths(self.root):
             name = path.stem

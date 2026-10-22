@@ -14,7 +14,7 @@ O assistente verifica e prepara o ambiente antes de começar. Em seguida, aprove
 
 > Vamos começar pela sua rotina. Hoje, o que mais atrapalha: encontrar informações, acompanhar pendências ou organizar compromissos?
 
-Conforme você responde, o assistente esclarece o necessário e apresenta um resumo para você conferir. Depois da conferência, guarda seu contexto e mostra onde ele ficou salvo. Se você já tem um perfil, usa esse contexto e pergunta apenas pelo que mudou.
+Conforme você responde, o assistente esclarece o necessário e apresenta um resumo na conversa: “Está correto? Faltou ou precisa corrigir alguma coisa?”. Com seu OK, salva `knowledge/perfil.md`, ligado ao relato de origem, e mostra o arquivo. Não é preciso definir todos os detalhes para começar; o que faltar fica como pendência no perfil. Se você já tem um perfil, usa esse contexto e pergunta apenas pelo que mudou.
 
 **Se ainda não tiver uma cópia**, inclua o endereço do template no pedido:
 
