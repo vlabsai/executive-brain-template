@@ -96,8 +96,23 @@ class OnboardingTests(unittest.TestCase):
         self.resources()
         with patch.object(search, 'verify_search') as probe, patch.object(search, 'refresh'):
             result = search.setup(self.root, verify=True)
-        probe.assert_called_once_with(self.root)
+        probe.assert_called_once_with(self.root, rerank=False)
         self.assertTrue(result['probe_executed'])
+
+    def test_hybrid_probe_must_pass_even_when_vector_probe_succeeds(self):
+        queries = []
+        def fake_run(root, arguments, **options):
+            if arguments[0] != 'query':
+                return None
+            queries.append(arguments)
+            return '[{"file":"knowledge/verificacao.md"}]' if len(queries) == 1 else '[]'
+        with patch.object(search, 'run', side_effect=fake_run):
+            with self.assertRaisesRegex(RuntimeError, 'não recuperou'):
+                search.verify_search(self.root)
+        self.assertEqual(len(queries), 2)
+        self.assertTrue(queries[0][1].startswith('vec:'))
+        self.assertTrue(queries[1][1].startswith('lex:'))
+        self.assertFalse(list((self.root/'.local/search').glob('onboarding-*')))
 
     def test_fresh_preparation_installs_only_pinned_qmd_with_local_cache(self):
         installs = []
@@ -111,7 +126,35 @@ class OnboardingTests(unittest.TestCase):
         arguments, options = installs[0]
         self.assertIn('@tobilu/qmd@'+search.VERSION, arguments)
         self.assertEqual(options['env']['npm_config_cache'], str(self.root/'.local/search/npm-cache'))
-        probe.assert_called_once_with(self.root)
+        probe.assert_called_once_with(self.root, rerank=False)
+
+    def test_optional_reranker_is_not_required_by_default_but_checked_when_requested(self):
+        self.resources()
+        self.assertTrue(search.readiness(self.root)['ready'])
+        self.assertFalse(search.readiness(self.root, rerank=True)['ready'])
+        model = self.root/'.local/search/cache/qmd/models'/search.RERANK_MODEL_FILE
+        with model.open('wb') as output:
+            output.write(b'GGUF')
+            output.seek(search.RERANK_MODEL_BYTES-1)
+            output.write(b'\0')
+        self.assertTrue(search.readiness(self.root, rerank=True)['ready'])
+        model.write_bytes(b'GGUF')
+        self.assertFalse(search.readiness(self.root, rerank=True)['ready'])
+
+    def test_optional_setup_exercises_reranking_before_declaring_it_ready(self):
+        self.resources()
+        model = self.root/'.local/search/cache/qmd/models'/search.RERANK_MODEL_FILE
+        def probe(root, rerank):
+            self.assertTrue(rerank)
+            with model.open('wb') as output:
+                output.write(b'GGUF')
+                output.seek(search.RERANK_MODEL_BYTES-1)
+                output.write(b'\0')
+        with patch.object(search, 'verify_search', side_effect=probe) as verify, patch.object(search, 'refresh'):
+            result = search.setup(self.root, rerank=True)
+        verify.assert_called_once_with(self.root, rerank=True)
+        self.assertTrue(result['ready'])
+        self.assertEqual(result['mode'], 'hybrid-rerank')
 
     def test_failed_real_index_after_probe_stays_pending(self):
         self.resources()

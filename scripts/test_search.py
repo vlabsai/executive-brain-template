@@ -31,10 +31,10 @@ if sys.argv[3] in ('query', 'search'):
 ''')
         cli.chmod(0o755)
 
-    def invoke(self, stage=''):
+    def invoke(self, stage='', action='search', query='atendimento entre equipes', extra=()):
         env = os.environ.copy()
         env.update(FAIL_STAGE=stage, INDEX_PATH='/unrelated/private.sqlite', QMD_CONFIG_DIR='/unrelated/config')
-        result = subprocess.run([sys.executable, 'scripts/search.py', 'search', 'atendimento entre equipes'],
+        result = subprocess.run([sys.executable, 'scripts/search.py', action, query, *extra],
                                 cwd=self.root, env=env, text=True, capture_output=True)
         calls = [json.loads(line) for line in (self.root/'calls.jsonl').read_text().splitlines()]
         return result, calls
@@ -49,6 +49,31 @@ if sys.argv[3] in ('query', 'search'):
         self.assertEqual(set(config['collections']), {'knowledge'})
         self.assertEqual(config['collections']['knowledge']['path'], str(self.root/'knowledge'))
         self.assertIn('**/README.md', config['collections']['knowledge']['ignore'])
+        command = calls[-1]['args']
+        self.assertEqual(command[2], 'query')
+        self.assertEqual(command[3], 'lex: atendimento entre equipes\nvec: atendimento entre equipes')
+        self.assertIn('--no-rerank', command)
+
+    def test_hybrid_preserves_exact_terms_and_full_semantic_question(self):
+        result, calls = self.invoke(query='O que ficou decidido?\nE quem conduz?',
+                                    extra=('--terms', '"DEC-0742" Atlas'))
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual(calls[-1]['args'][3],
+                         'lex: "DEC-0742" Atlas\nvec: O que ficou decidido? E quem conduz?')
+        command = calls[-1]['args']
+        self.assertEqual(command[command.index('--intent')+1], 'O que ficou decidido? E quem conduz?')
+
+    def test_explicit_reranking_keeps_both_retrieval_backends(self):
+        result, calls = self.invoke(extra=('--rerank',))
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertNotIn('--no-rerank', calls[-1]['args'])
+        self.assertIn('lex:', calls[-1]['args'][3])
+        self.assertIn('vec:', calls[-1]['args'][3])
+
+    def test_lexical_lookup_does_not_require_vector_generation(self):
+        result, calls = self.invoke(action='lexical', query='CT-8821')
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual([call['args'][2] for call in calls], ['update', 'search'])
 
     def test_failed_scan_prevents_embedding_and_query(self):
         result, calls = self.invoke('update')
@@ -60,6 +85,12 @@ if sys.argv[3] in ('query', 'search'):
         result, calls = self.invoke('embed')
         self.assertNotEqual(result.returncode, 0)
         self.assertEqual([call['args'][2] for call in calls], ['update', 'embed'])
+        self.assertEqual(result.stdout, '')
+
+    def test_failed_reranking_does_not_retry_without_reranking(self):
+        result, calls = self.invoke('query', extra=('--rerank',))
+        self.assertNotEqual(result.returncode, 0)
+        self.assertEqual([call['args'][2] for call in calls], ['update', 'embed', 'query'])
         self.assertEqual(result.stdout, '')
 
 

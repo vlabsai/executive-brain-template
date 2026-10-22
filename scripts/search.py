@@ -12,6 +12,8 @@ ROOT = Path(__file__).resolve().parents[1]
 VERSION = '2.8.3'
 MODEL_FILE = 'hf_ggml-org_embeddinggemma-300M-Q8_0.gguf'
 MODEL_BYTES = 333590944
+RERANK_MODEL_FILE = 'hf_ggml-org_qwen3-reranker-0.6b-q8_0.gguf'
+RERANK_MODEL_BYTES = 639153184
 
 
 def environment(root):
@@ -59,6 +61,20 @@ def refresh(root, semantic=True):
         run(root, ['embed'], maintenance=True)
 
 
+def query_arguments(query, terms=None, rerank=False):
+    # Structured queries let QMD fuse BM25 and vectors without an expansion LLM.
+    semantic = ' '.join(query.splitlines()).strip()
+    lexical = ' '.join((terms if terms is not None else query).splitlines()).strip()
+    if not semantic or not lexical:
+        raise ValueError('Informe uma pergunta e termos de busca não vazios.')
+    # QMD uses the first lexical query for reranking. Preserve the full question
+    # as intent so short exact terms do not replace the information need.
+    command = ['query', 'lex: '+lexical+'\nvec: '+semantic, '--intent', semantic]
+    if not rerank:
+        command.append('--no-rerank')
+    return command
+
+
 def prerequisites():
     errors = []
     if sys.version_info < (3, 10):
@@ -87,20 +103,25 @@ def installed(root):
         return False
 
 
-def readiness(root):
+def complete_model(path, size):
+    try:
+        with path.open('rb') as source:
+            return source.read(4) == b'GGUF' and path.stat().st_size == size
+    except OSError:
+        return False
+
+
+def readiness(root, rerank=False):
     """Read actual local resources; do not maintain a separate ready flag."""
     issues = prerequisites()
     state = root/'.local/search'
     if not installed(root):
         issues.append('QMD '+VERSION)
     model = state/'cache/qmd/models'/MODEL_FILE
-    try:
-        with model.open('rb') as source:
-            valid = source.read(4) == b'GGUF' and model.stat().st_size == MODEL_BYTES
-    except OSError:
-        valid = False
-    if not valid:
+    if not complete_model(model, MODEL_BYTES):
         issues.append('Modelo de embeddings completo')
+    if rerank and not complete_model(state/'cache/qmd/models'/RERANK_MODEL_FILE, RERANK_MODEL_BYTES):
+        issues.append('Modelo de re-ranking completo')
     try:
         with (state/'index.sqlite').open('rb') as source:
             indexed = source.read(16) == b'SQLite format 3\x00'
@@ -108,10 +129,10 @@ def readiness(root):
         indexed = False
     if not indexed or not (state/'config/brain.yml').is_file():
         issues.append('Índice e configuração desta cópia')
-    return {'ready': not issues, 'pending': issues}
+    return {'ready': not issues, 'pending': issues, 'mode': 'hybrid-rerank' if rerank else 'hybrid'}
 
 
-def verify_search(root):
+def verify_search(root, rerank=False):
     """Load/download the embedding model and exercise retrieval outside real notes."""
     state = root/'.local/search'
     state.mkdir(parents=True, exist_ok=True)
@@ -126,16 +147,22 @@ def verify_search(root):
         env['QMD_CONFIG_DIR'] = str(probe/'config')
         run(root, ['update'], maintenance=True, env=env)
         run(root, ['embed'], maintenance=True, env=env)
-        output = run(root, ['query', 'vec: Quem fará a revisão do protótipo de exemplo?',
-                            '--no-rerank', '-c', 'knowledge', '-n', '1', '--json', '--full-path'],
-                     capture=True, env=env)
-        results = json.loads(output)
-        if not isinstance(results, list) or not any(str(item.get('file', '')).endswith('/verificacao.md') for item in results if isinstance(item, dict)):
-            raise RuntimeError('A busca de verificação não recuperou o registro fictício; onboarding pendente.')
+        # Check vectors separately, so a lexical hit cannot hide a vector failure.
+        question = 'Quem fará a revisão do protótipo de exemplo?'
+        commands = [
+            ['query', 'vec: '+question, '--no-rerank'],
+            query_arguments(question, 'protótipo revisão', rerank),
+        ]
+        for command in commands:
+            output = run(root, [*command, '-c', 'knowledge', '-n', '1', '--json', '--full-path'],
+                         capture=True, env=env)
+            results = json.loads(output)
+            if not isinstance(results, list) or not any(str(item.get('file', '')).endswith('/verificacao.md') for item in results if isinstance(item, dict)):
+                raise RuntimeError('A busca de verificação não recuperou o registro fictício; onboarding pendente.')
 
 
-def setup(root, verify=False):
-    state = readiness(root)
+def setup(root, verify=False, rerank=False):
+    state = readiness(root, rerank)
     if state['ready'] and not verify:
         # Configuration is derived and follows this checkout after moves.
         configure(root)
@@ -148,9 +175,9 @@ def setup(root, verify=False):
                         f'@tobilu/qmd@{VERSION}', '--save-exact', '--no-fund', '--no-audit'],
                        cwd=root, env=environment(root), check=True, stdout=sys.stderr)
     configure(root)
-    verify_search(root)
+    verify_search(root, rerank=rerank)
     refresh(root)
-    state = readiness(root)
+    state = readiness(root, rerank)
     if not state['ready']:
         raise RuntimeError('Onboarding pendente: '+', '.join(state['pending']))
     return {**state, 'prepared_now': True, 'probe_executed': True}
@@ -161,17 +188,25 @@ def main():
     parser.add_argument('action', choices=('setup', 'check', 'update', 'status', 'search', 'lexical'))
     parser.add_argument('query', nargs='?')
     parser.add_argument('-n', type=int, default=5)
+    parser.add_argument('--terms', help='Termos exatos para o componente textual da busca híbrida.')
+    parser.add_argument('--rerank', action='store_true', help='Reordenar os candidatos com o modelo local adicional.')
     parser.add_argument('--verify', action='store_true', help='Repeat the temporary retrieval test during setup.')
     args = parser.parse_args()
     if args.action in ('search', 'lexical') and not args.query:
         parser.error('Informe a pergunta ou os termos de busca.')
+    if args.terms is not None and (args.action != 'search' or not args.terms.strip()):
+        parser.error('--terms requer search e termos não vazios.')
+    if args.rerank and args.action not in ('search', 'setup', 'check'):
+        parser.error('--rerank requer search, setup ou check.')
+    if args.action in ('search', 'lexical') and (not args.query.strip() or args.n < 1):
+        parser.error('Informe texto não vazio e uma quantidade positiva de resultados.')
     try:
         if args.action == 'check':
-            state = readiness(ROOT)
+            state = readiness(ROOT, args.rerank)
             print(json.dumps(state, ensure_ascii=False))
             return 0 if state['ready'] else 1
         if args.action == 'setup':
-            print(json.dumps(setup(ROOT, args.verify), ensure_ascii=False))
+            print(json.dumps(setup(ROOT, args.verify, args.rerank), ensure_ascii=False))
             return 0
         configure(ROOT)
         if args.action == 'update':
@@ -181,13 +216,10 @@ def main():
         else:
             semantic = args.action == 'search'
             refresh(ROOT, semantic)
-            # vsearch in 2.8.3 also loads the expansion LLM. A typed vector
-            # query avoids that download and reranking for this small path.
-            query = 'vec: '+args.query.replace('\n', ' ') if semantic else args.query
-            command = ['query', query, '--no-rerank'] if semantic else ['search', query]
+            command = query_arguments(args.query, args.terms, args.rerank) if semantic else ['search', args.query]
             run(ROOT, [*command, '-c', 'knowledge', '-n', str(args.n),
                        '--json', '--full-path'])
-    except (OSError, RuntimeError, subprocess.CalledProcessError) as exc:
+    except (OSError, ValueError, RuntimeError, subprocess.CalledProcessError) as exc:
         print(str(exc), file=sys.stderr)
         return 1
     return 0

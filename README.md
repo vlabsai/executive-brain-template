@@ -108,7 +108,7 @@ Os fluxos são independentes: uma consulta não exige repetir a entrevista, e cu
 
 Abra a raiz da cópia privada como cofre no Obsidian. Links Markdown, propriedades, backlinks e grafo funcionam com recursos nativos. A configuração foca `knowledge/` e oculta READMEs no grafo; estado de janela e preferências pessoais ficam fora do Git.
 
-A [busca no executor](.agents/skills/brain-query/references/search.md) usa QMD 2.8.3 com embeddings locais, sem serviço próprio. O assistente prepara ferramentas e modelos conforme essa referência. Antes de consultar, o helper atualiza o índice e os embeddings necessários; depois, o assistente abre as notas atuais para conferir o que foi recuperado. Similaridade ajuda a encontrar, mas não comprova um fato.
+A [busca no executor](.agents/skills/brain-query/references/search.md) usa QMD 2.8.3, combinando termos exatos e significado na busca híbrida local, sem serviço próprio. Há re-ranking opcional para reavaliar os candidatos; esse modo prepara um modelo adicional. O assistente prepara ferramentas e modelos conforme essa referência. Antes de consultar, o helper atualiza o índice e os embeddings necessários; depois, o assistente abre as notas atuais para conferir o que foi recuperado. Similaridade ajuda a encontrar, mas não comprova um fato.
 
 O executor pode ser o computador pessoal ou um ambiente remoto preparado. O Dot coordena pedidos; o executor lê esta cópia, usa seus próprios acessos e executa as tarefas. Git sincroniza as notas aceitas entre cópias privadas. Credenciais, modelos e índices não são compartilhados pelo clone e precisam de preparação própria em cada ambiente. Atualizações recebidas por Git ou feitas no Obsidian precisam chegar ao índice antes da próxima consulta.
 

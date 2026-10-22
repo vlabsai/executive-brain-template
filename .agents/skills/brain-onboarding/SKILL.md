@@ -13,11 +13,11 @@ Execute na raiz da cópia:
 python3 scripts/search.py setup
 ```
 
-O helper confere os pré-requisitos e os recursos reais desta cópia. Se já estiverem presentes, retorna rapidamente sem reinstalar, baixar modelos ou repetir o teste. Quando faltar preparação, instala o QMD fixado, carrega o modelo de embeddings por um teste vetorial fictício e prepara o índice do conhecimento aceito. O teste usa um índice temporário fora das notas reais, compartilha apenas o cache do modelo e é removido ao terminar. Instalação, cache npm, modelo e índices ficam em .local/, fora do Git.
+O helper confere os pré-requisitos e os recursos reais desta cópia. Se já estiverem presentes, retorna rapidamente sem reinstalar, baixar modelos ou repetir o teste. Quando faltar preparação, instala o QMD fixado, carrega o modelo de embeddings, confere as buscas vetorial e híbrida num teste fictício e prepara o índice do conhecimento aceito. O teste usa um índice temporário fora das notas reais, compartilha apenas o cache do modelo e é removido ao terminar. Instalação, cache npm, modelo e índices ficam em .local/, fora do Git.
 
 Confira o código de saída e o resultado. Só apresente o ambiente como pronto depois de `ready: true`. Ao retomar uma conversa no mesmo executor, aproveite a preparação já conferida; antes de uma consulta, o fluxo de busca continua atualizando o conhecimento indexado. Não mantenha outro cadastro ou arquivo de aprovação para isso.
 
-Se o ambiente mudou, houve falha de execução ou a pessoa pediu nova verificação, repita o teste com `python3 scripts/search.py setup --verify`. Uma conferência sem instalação está disponível em `python3 scripts/search.py check`. A [referência de busca](../brain-query/references/search.md) explica requisitos e limites.
+Se o ambiente mudou, houve falha de execução ou a pessoa pediu nova verificação, repita o teste com `python3 scripts/search.py setup --verify`. Uma conferência sem instalação está disponível em `python3 scripts/search.py check`. O padrão é busca híbrida com um modelo de embeddings. Se a tarefa for usar re-ranking, prepare-o com `python3 scripts/search.py setup --rerank`; esse modo verifica também o modelo adicional em um teste temporário. A [referência de busca](../brain-query/references/search.md) explica requisitos e limites.
 
 Se faltar Python, Node, npm, espaço, rede ou permissão, informe o bloqueio concreto e resolva o que estiver ao alcance da tarefa. Solicite uma ação humana somente quando necessária; não altere políticas de rede nem instale ferramentas globais para contornar o bloqueio. Preserve notas existentes e não apresente leitura textual como busca semântica preparada. Se a preparação continuar pendente, informe a limitação antes de prosseguir com o que independe dela.
 
