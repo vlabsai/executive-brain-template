@@ -9,7 +9,7 @@ Siga [AGENTS.md](../../../AGENTS.md). Este recurso pertence à autoria e manuten
 
 Liste os casos com `python3 .agents/skills/brain-evaluate/scripts/preparar_caso.py --list`. Escolha pelo pedido da pessoa; com apenas um caso disponível, use-o. Pergunte qual deseja somente se houver ambiguidade entre os casos existentes.
 
-Prepare o caso com o mesmo script, passando seu nome. Ele devolve uma pasta nova em .local/ensaios/, com as fontes fictícias, os pontos de conferência e a skill avaliada. Trabalhe nessa pasta e siga TASK.md. Não use o perfil ou as notas reais como entradas do ensaio.
+Prepare o caso com o mesmo script, passando seu nome. Ele devolve uma pasta nova em .local/ensaios/, com as fontes fictícias, os pontos de conferência, as três skills de trabalho e os recursos comuns de leitura/busca. Modelos, índices, notas e preferências pessoais da cópia de origem não são copiados. Trabalhe nessa pasta e siga TASK.md. Não use o perfil ou as notas reais como entradas do ensaio.
 
 Execute a tarefa indicada, sem substituir a skill avaliada por uma resposta de referência. Mostre a fonte e o resultado que realmente foi produzido; se a tarefa cria um arquivo, abra o arquivo salvo. Use os critérios do caso para conduzir a conferência com a pessoa. Critérios sobre perguntas ou interação precisam da conversa observada; sem ela, deixe esse ponto pendente.
 

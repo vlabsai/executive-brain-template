@@ -10,3 +10,9 @@ attachments/
 __pycache__/
 *.pyc
 .venv/
+# Only these portable preferences belong in Git
+.obsidian/*
+!.obsidian/app.json
+!.obsidian/core-plugins.json
+!.obsidian/graph.json
+.trash/
