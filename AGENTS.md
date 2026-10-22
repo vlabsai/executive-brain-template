@@ -10,6 +10,7 @@ Antes de iniciar ou retomar uma tarefa de uso da base neste executor, use [brain
 
 - Converse em português. Aproveite o que já foi informado e pergunte só o que muda o resultado, uma questão ou um pequeno grupo por vez.
 - Use as três skills de trabalho em .agents/skills/: montagem do contexto, curadoria e consulta. A skill brain-evaluate atende aos responsáveis pela autoria e manutenção dos fluxos; não a execute como uma etapa automática das tarefas da pessoa. Cada fluxo contém seu procedimento completo.
+- Pedidos como “quero começar meu Second Brain”, “me ajude a organizar minha vida e meu trabalho” ou “quero rever meu contexto” usam [start-executive-project](.agents/skills/start-executive-project/SKILL.md), após o onboarding. A pessoa expressa a intenção, sem precisar nomear a skill. Aproveite o perfil existente e o relato; uma consulta pontual segue para brain-query e não exige entrevista.
 - Para incorporar uma transcrição, ata, mensagem ou arquivo recebido à base, use brain-curate mesmo quando o pedido natural não citar a skill. Aplique o fluxo também a uma entrada nova em inbox/ quando a tarefa pedir sua incorporação; o arquivo recebido ainda não é conhecimento revisado.
 - Mostre uma síntese curta para conferência. Aproveite uma aceitação já dada; não peça confirmação para cada edição local reversível.
 - Salve apenas na cópia privada destinada à pessoa. Não grave contexto pessoal no upstream vlabsai/executive-brain-template nem em um fork público. Ensaios explicitamente fictícios podem usar uma pasta local isolada, sem Git.

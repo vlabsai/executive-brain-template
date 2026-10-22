@@ -4,6 +4,37 @@ Uma base pessoal de informação e conhecimento para organizar a vida e o trabal
 
 O projeto reúne fontes recebidas, conhecimento revisado e relações entre empresas, pessoas, projetos, reuniões e temas. Obsidian permite navegar por essas relações; a busca ajuda a encontrar informações pelo significado. O Dot pode coordenar as tarefas, enquanto o executor segue as instruções e skills desta cópia.
 
+## Começar sua base
+
+Na conversa em que o assistente tem acesso à sua cópia, diga o que gostaria de organizar. Por exemplo:
+
+> Quero começar meu Second Brain para organizar minha vida e meu trabalho. Me ajude a escolher por onde começar.
+
+O assistente verifica e prepara o ambiente antes de começar. Em seguida, aproveita o que você já contou e conversa sobre sua rotina, suas prioridades e a primeira dificuldade que vale resolver. Uma abertura possível:
+
+> Vamos começar pela sua rotina. Hoje, o que mais atrapalha: encontrar informações, acompanhar pendências ou organizar compromissos?
+
+Conforme você responde, o assistente esclarece o necessário e apresenta um resumo para você conferir. Depois da conferência, guarda seu contexto e mostra onde ele ficou salvo. Se você já tem um perfil, usa esse contexto e pergunta apenas pelo que mudou.
+
+**Se ainda não tiver uma cópia**, inclua o endereço do template no pedido:
+
+> Quero criar meu Second Brain para organizar minha vida e meu trabalho usando este modelo: https://github.com/vlabsai/executive-brain-template. Me ajude a começar.
+
+O assistente prepara ou reutiliza uma cópia privada, preserva os arquivos existentes e segue a conversa nela. Se alguma ação depender de você, explica o que precisa ser feito. Informações reais ficam nessa cópia privada; o template e os forks públicos recebem somente material genérico ou fictício.
+
+## No dia a dia
+
+Continue pela conversa, trazendo a informação ou a dúvida que quer resolver:
+
+| Você pode dizer | Como o assistente conduz |
+|---|---|
+| “Saí de uma reunião e vou colar minhas anotações. Me ajude a organizar o que ficou combinado.” | Lê o texto fornecido, organiza decisões e pendências e mostra a proposta para conferência antes de incorporar. |
+| “Onde ficou aquela decisão sobre mudar o atendimento?” | Esclarece o assunto se necessário, busca nas notas e mostra a origem do que encontrou. |
+| “Chegou uma atualização sobre esse projeto. Compare com o que já temos.” | Usa o novo registro fornecido, compara as notas e propõe a atualização, preservando o histórico. |
+| “Minha prioridade mudou. Quero rever como você está me ajudando.” | Retoma seu perfil e conversa sobre as mudanças antes de atualizar o contexto. |
+
+Quando faltar um texto, a identificação de um assunto ou acesso a uma fonte, o assistente pede o necessário para continuar. Consultas sobre informações já existentes seguem diretamente para a base; não exigem refazer seu perfil.
+
 ## Como a informação circula
 
 ```mermaid
@@ -59,36 +90,14 @@ As pastas de conteúdo já vêm com READMEs. As tarefas criam as notas quando ho
 
 As [convenções das notas](knowledge/README.md) definem identidade estável, domínios, relações e origem. `inbox/` preserva entradas e propostas; somente conteúdo aceito em `knowledge/` entra na busca padrão. Modelos, índice e originais locais não versionados ficam em `.local/`, criada conforme a necessidade do executor.
 
-## Começar sua base
-
-Com o Codex aberto, peça:
-
-> Prepare ou reutilize minha cópia privada a partir de https://github.com/vlabsai/executive-brain-template. Confira o destino, clone a cópia e use-a como pasta de trabalho. Leia suas instruções e mostre a estrutura disponível. Preserve os arquivos que já existirem.
-
-Ao começar a trabalhar nesta cópia, as instruções acionam `brain-onboarding`. O assistente confere o ambiente, prepara o que faltar e valida uma busca com dados fictícios temporários, inclusive quando a base ainda estiver vazia. Depois retoma o seu pedido. Nas retomadas, a checagem reutiliza os recursos existentes; não há uma instalação a cada pergunta.
-
-Para montar seu contexto:
-
-> Use a skill start-executive-project para me entrevistar, esclarecer o que faltar e organizar meu perfil nesta base.
-
-A entrevista aproveita o relato existente, pergunta pelo que muda o resultado e apresenta uma síntese. Após a conferência, salva o perfil e preserva ou referencia sua origem. O nome da skill é um identificador de acionamento; o contexto pode cobrir responsabilidades pessoais e profissionais.
-
-Depois, faça pedidos conforme a necessidade:
-
-- **Organizar:** “Organize este documento na minha base. Quero reencontrar as decisões, dúvidas e próximos passos. Mostre a proposta antes de incorporar.”
-- **Atualizar:** “Este registro traz uma mudança no projeto. Compare com as notas existentes, preserve o histórico e mostre o que precisa ser atualizado.”
-- **Consultar:** “O que preciso acompanhar neste projeto? Mostre as fontes, a data de referência e o que ainda falta confirmar.”
-
-Forneça o texto, arquivo ou identificação da fonte autorizada. O assistente encaminha a curadoria e a consulta pelos fluxos do projeto. Se a skill não aparecer no seletor, peça que leia o `SKILL.md` correspondente nesta cópia.
-
-Use uma cópia privada para informações reais. O template público e seus forks públicos recebem somente material genérico ou fictício. Clonar o repositório não instala a busca nem conecta contas.
-
 ## Fluxos disponíveis
+
+Os identificadores abaixo são referências do assistente. As intenções expressas na conversa orientam o fluxo utilizado.
 
 | Skill | Quando usar |
 |---|---|
 | [brain-onboarding](.agents/skills/brain-onboarding/SKILL.md) | Preparação inicial e conferência do executor antes de usar a base. |
-| [start-executive-project](.agents/skills/start-executive-project/SKILL.md) | Acionamento explícito para montar ou rever seu perfil e contexto. |
+| [start-executive-project](.agents/skills/start-executive-project/SKILL.md) | Começar ou rever seu contexto a partir do pedido da pessoa. |
 | [brain-curate](.agents/skills/brain-curate/SKILL.md) | Incorporar ou atualizar informações, por pedido natural, com curadoria e revisão. |
 | [brain-query](.agents/skills/brain-query/SKILL.md) | Consultar as notas e conferir afirmações nas fontes. |
 | [brain-evaluate](.agents/skills/brain-evaluate/SKILL.md) | Quem mantém os fluxos reproduz casos fictícios e confere seu comportamento. |
