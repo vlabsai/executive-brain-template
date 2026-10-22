@@ -23,7 +23,7 @@ O fork público serve para testes fictícios. Antes de trabalhar com dados reais
 | [inbox/](inbox/README.md) | Relatos, textos e propostas que recebemos |
 | [knowledge/](knowledge/README.md) | Perfil e notas revisadas de empresas, pessoas, projetos, reuniões e temas |
 
-Essas pastas e as cinco subdivisões do conhecimento já existem no clone, com READMEs curtos. A entrevista e as próximas tarefas criam notas preenchidas e ligadas entre si. Uma pessoa ou empresa tem uma nota canônica, mesmo quando participa de vários contextos.
+Essas pastas e as cinco subdivisões do conhecimento já existem no clone, com READMEs curtos. No primeiro encontro, o foco é receber uma fonte em inbox/ e conferir o perfil e uma nota em knowledge/. A organização completa fica disponível desde o início e é explorada aos poucos. A entrevista e as próximas tarefas criam notas preenchidas e ligadas entre si. Uma pessoa ou empresa tem uma nota canônica, mesmo quando participa de vários contextos.
 
 Para incorporar uma informação, faça um pedido natural, por exemplo: **Organize esta transcrição na minha base. Quero encontrar depois as decisões, pendências e próximos passos.** Forneça o texto da reunião e sua origem. O assistente usa o roteiro de curadoria, mostra a proposta e a incorpora depois da sua conferência. Para consultar, pergunte naturalmente, por exemplo: **O que preciso acompanhar neste projeto? Mostre as fontes e o que ainda falta confirmar.**
 
@@ -42,7 +42,7 @@ Abra a raiz da cópia privada como cofre. O conhecimento continua em Markdown, e
 
 ## Preparação técnica
 
-Esta branch contém a fundação em validação. A busca usa QMD 2.8.3 com embeddings locais; não existe serviço próprio. A [referência técnica](.agents/skills/brain-query/references/search.md) explica preparação, atualização e limites. Dot coordena o fluxo no executor preparado; o clone não compartilha automaticamente contas, arquivos locais ou índices com outra máquina. A prova remota e o piloto por conector ainda são etapas separadas.
+A fundação inclui a organização das notas, Obsidian e busca com QMD 2.8.3 e embeddings locais; não existe serviço próprio. Esses fluxos foram exercitados com exemplos fictícios e em um piloto privado, incluindo coleta autorizada, execução remota e sincronização. A [referência técnica](.agents/skills/brain-query/references/search.md) explica preparação, atualização e limites. Dot coordena o fluxo no executor preparado; o clone não instala as ferramentas nem compartilha automaticamente contas, arquivos locais ou índices com outra máquina. Prepare e confira os acessos de cada aplicação. Inicialização automática, persistência entre tarefas e coleta recorrente exigem suas próprias provas quando forem usadas.
 
 Se a skill não aparecer no seletor, peça ao Codex que leia o SKILL.md correspondente nesta cópia. Agenda, briefing e automação entram quando houver uma necessidade concreta.
 
