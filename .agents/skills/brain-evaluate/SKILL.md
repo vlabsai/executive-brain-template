@@ -20,3 +20,5 @@ Nos casos do Alfa, curar-ata-alfa acompanha a proposta e sua incorporação apó
 Para acrescentar uma avaliação, adicione um JSON em [assets](assets/) com title, skill, prompt, files e checks. A entrada deve ser fictícia, a skill deve existir no projeto e os critérios devem descrever resultados observáveis. O script descobre os casos disponíveis; não é preciso editar listas no código. A quantidade de critérios depende da tarefa; os casos fornecidos usam poucos pontos.
 
 Para comparar somente a recuperação, prepare navegar-e-buscar e execute `python3 .agents/skills/brain-evaluate/scripts/comparar_busca.py CAMINHO_DO_ENSAIO`. O script aceita apenas as notas fictícias originais desse caso, prepara o índice e compara vetor, híbrida e híbrida com re-ranking nas mesmas perguntas. O JSON mostra posições e tempos observados, sem aprovar respostas ou acionar a skill avaliada. A primeira passagem pode baixar o reranker. São poucos exemplos de manutenção, não uma prova de escala ou uma etapa da pessoa usuária.
+
+A [comparação local observada](references/busca-observada.md) registra o alcance da prova e a decisão sobre o modo padrão.
