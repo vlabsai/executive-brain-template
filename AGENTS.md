@@ -41,3 +41,5 @@ Compare o que foi salvo com a fonte e mostre os caminhos reais. Uma consulta com
 As evals de autoria são exemplos curtos: entrada fictícia, resultado real e três pontos conferidos por quem mantém o fluxo. Corrija uma divergência se houver; não produza nota de aprovação automática, manifesto ou relatório. A conferência das notas reais com o executivo continua sendo parte das três skills de trabalho.
 
 Ao alterar as instruções, skills ou scripts do template, rode python3 scripts/validate.py e os testes em scripts/. Não exija essa validação de manutenção para cada nota do executivo. Integridade dos arquivos não comprova comportamento ou acesso operacional.
+
+Quando reorganizar notas ou preparar sua sincronização, o mesmo script aceita --notes para conferir ids ausentes ou repetidos e links locais quebrados ou externos à cópia. Essa conferência não aprova fatos, domínios ou origem; compare-os com o material consultado.

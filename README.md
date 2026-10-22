@@ -49,3 +49,5 @@ Se a skill não aparecer no seletor, peça ao Codex que leia o SKILL.md correspo
 O template e seus forks públicos recebem apenas material genérico. Use dados fictícios para testar; mantenha conteúdo pessoal na cópia local ou em destino privado autorizado. Não envie dados pessoais ao fork público.
 
 Quem mantém os fluxos pode usar brain-evaluate para reproduzir uma tarefa com dados fictícios, conferir a saída e ajustar a skill. Esse teste não é uma atividade do participante nem uma etapa automática a cada nota. Para manutenção do framework, execute python3 scripts/validate.py e python3 -m unittest discover -s scripts -p 'test_*.py'. Essa verificação não comprova acesso operacional. Atualizações do template não alteram automaticamente cópias já existentes.
+
+Para conferir a integridade de uma base preenchida, o assistente pode executar python3 scripts/validate.py --notes: verifica ids e links das notas, sem aprovar o conteúdo. As convenções e a revisão continuam nas próprias notas; não existe um cadastro paralelo.

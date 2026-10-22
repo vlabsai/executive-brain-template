@@ -5,7 +5,7 @@ import shutil
 import tempfile
 import unittest
 
-from validate import ROOT, validate, evaluation_module
+from validate import ROOT, validate, validate_notes, evaluation_module
 
 evaluations = evaluation_module()
 prepare = evaluations.prepare
@@ -41,6 +41,35 @@ class FrameworkTests(unittest.TestCase):
         path = self.root/'.agents/skills/brain-query/SKILL.md'
         path.write_text(path.read_text()+'\n[Outside](../../../../outside.md)\n')
         self.assertTrue(any('Invalid local link' in e for e in validate(self.root)))
+
+    def test_note_check_accepts_links_and_detects_missing_target(self):
+        note = self.root/'knowledge/check.md'
+        source = self.root/'inbox/source with spaces.txt'
+        source.write_text('Fictional source')
+        note.write_text('---\nid: stable-note\ndomains: [example]\n---\n[Source](../inbox/source%20with%20spaces.txt)\n')
+        self.assertEqual(validate_notes(self.root), [])
+        source.unlink()
+        self.assertTrue(any('Invalid local link' in e for e in validate_notes(self.root)))
+
+    def test_note_check_detects_missing_and_duplicate_identity(self):
+        first = self.root/'knowledge/check.md'
+        first.write_text('# Note without identity\n')
+        self.assertTrue(any('Missing note id' in e for e in validate_notes(self.root)))
+        first.write_text('---\nid: stable-note\ndomains: [example]\n---\n# Fictional note\n')
+        second = self.root/'knowledge/other.md'
+        second.write_text(first.read_text())
+        self.assertTrue(any('Duplicate note id' in e for e in validate_notes(self.root)))
+
+    def test_note_check_preserves_identity_after_move_and_blocks_escaped_link(self):
+        first = self.root/'knowledge/check.md'
+        first.write_text('---\nid: stable-note\ndomains: [example]\n---\n# Fictional note\n')
+        first.rename(self.root/'knowledge/projetos/moved.md')
+        self.assertEqual(validate_notes(self.root), [])
+        outside = Path(self.temp.name)/'outside.md'
+        outside.write_text('Outside the Brain')
+        moved = self.root/'knowledge/projetos/moved.md'
+        moved.write_text(moved.read_text()+'\n[Outside](../../../outside.md)\n')
+        self.assertTrue(any('Invalid local link' in e for e in validate_notes(self.root)))
 
     def test_example_does_not_copy_personal_context_or_notes(self):
         (self.root/'knowledge').mkdir(exist_ok=True)

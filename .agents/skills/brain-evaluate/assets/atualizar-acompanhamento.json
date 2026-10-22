@@ -1,0 +1,16 @@
+{
+  "title": "Atualizar o acompanhamento sem apagar a história",
+  "skill": "brain-curate",
+  "prompt": "Atualize o acompanhamento do Projeto Alfa usando a nota de 30/10. A revisão da adaptação está delegada para este ensaio fictício; confira os sujeitos e o alcance das afirmações. Depois processe novamente a ata mais antiga, de 20/10. Preserve as notas aceitas e mostre o que realmente mudou. O recibo pessoal é outro contexto, sem relação factual com o projeto.",
+  "files": {
+    "inbox/ata-20-10.txt": "Caso fictício. Alinhamento Alfa, 20/10/2026. Marina enviará a proposta até 28/10, após a revisão de esforço de Ana. R$ 48 mil é estimativa, ainda depende de aval financeiro. Bruno pediu exemplos de retrabalho. Não há aprovação de investimento registrada.\n",
+    "inbox/atualizacao-30-10.txt": "Caso fictício. Atualização revisada de 30/10/2026: Marina enviou a proposta em 28/10, depois da revisão de Ana. Bruno confirmou o recebimento em 29/10. A decisão financeira continua pendente. Não foi fixada data de decisão.\n",
+    "inbox/recibo-pessoal.txt": "Caso fictício de outro domínio: reserva pessoal de hotel de R$ 2 mil. Não se refere ao Alfa e não está incorporada à base.\n",
+    "knowledge/projetos/projeto-alfa.md": "---\nid: 53f526d4-a2ae-44cb-bef7-e788419711e6\ndomains: [lume, cliente-alfa]\n---\n\n# Projeto Alfa\n\n## Acompanhamento registrado em 20/10/2026\n\nMarina enviará a proposta até 28/10 depois da revisão de Ana. R$ 48 mil é estimativa sem aprovação financeira registrada.\n\n## Origem e revisão\n\n[Ata fictícia de 20/10](../../inbox/ata-20-10.txt). Nota aceita fornecida como entrada do ensaio.\n"
+  },
+  "checks": [
+    "O acompanhamento passa a registrar envio por Marina em 28/10 e recebimento por Bruno em 29/10, mantendo o mesmo id e o compromisso histórico com sua fonte?",
+    "A releitura da ata de 20/10 preserva o acompanhamento posterior, sem criar outro Projeto Alfa, reabrir a preparação da proposta ou dar aprovação financeira inexistente?",
+    "A nota aponta às fontes realmente lidas, preserva a decisão financeira sem data e não importa o recibo pessoal de inbox/ como preço do projeto?"
+  ]
+}

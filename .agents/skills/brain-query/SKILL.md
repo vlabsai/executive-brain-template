@@ -13,6 +13,8 @@ Uma pergunta sobre uma nota já indicada pode ser respondida pela leitura direta
 
 Responda de forma curta com os fatos sustentados e suas fontes. Separe interpretação, proposta e informação ausente. Se houver conflito, preserve as versões e suas origens; não escolha uma confirmação que não existe.
 
+Quando a pergunta pedir o estado atual, compare os registros datados e siga o acompanhamento mais recente disponível. Identifique a data de referência e o que não foi confirmado depois; uma reunião histórica continua válida para explicar o que se combinou naquele momento. Não trate uma síntese como se tivesse lido todas as fontes citadas nela.
+
 Para uma conferência da aula, escolha com a pessoa uma afirmação e encontre seu suporte na origem. Se houver diferença, corrija esse ponto e releia a resposta. Se for pedido guardar o resultado, use uma única nota em knowledge/consulta-encontro-1.md, com pergunta, fontes realmente lidas e a conferência ou correção observada. Não declare revisão que não aconteceu.
 
 Uma consulta comum não cria arquivo nem altera notas. Para incorporar fatos à base, use a skill de curadoria. Termine com o que foi encontrado e a informação que falta, sem presumir que houve ação externa.
