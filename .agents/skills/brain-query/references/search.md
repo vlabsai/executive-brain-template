@@ -1,6 +1,6 @@
 # Busca no executor
 
-Procedimento técnico para o assistente. O executivo faz um pedido natural. O mecanismo candidato é [QMD 2.8.3](https://github.com/tobi/qmd/releases/tag/v2.8.3), executado por [scripts/search.py](../../../../scripts/search.py). O helper mantém a configuração e o índice desta cópia em .local/search/, excluído do Git. Não instala serviço nem agenda execução.
+Procedimento técnico para o assistente. A pessoa faz um pedido natural. O mecanismo candidato é [QMD 2.8.3](https://github.com/tobi/qmd/releases/tag/v2.8.3), executado por [scripts/search.py](../../../../scripts/search.py). O helper mantém a configuração e o índice desta cópia em .local/search/, excluído do Git. Não instala serviço nem agenda execução.
 
 ## Preparar uma vez
 

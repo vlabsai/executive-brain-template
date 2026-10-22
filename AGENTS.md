@@ -5,10 +5,10 @@ Este é o ponto único de regras para o assistente. Leia knowledge/perfil.md qua
 ## Trabalhar com a pessoa
 
 - Converse em português. Aproveite o que já foi informado e pergunte só o que muda o resultado, uma questão ou um pequeno grupo por vez.
-- Use as três skills de trabalho em .agents/skills/: montagem do contexto, curadoria e consulta. A skill brain-evaluate atende aos responsáveis pela autoria e manutenção dos fluxos; não a apresente como uma tarefa do executivo. Cada fluxo contém seu procedimento completo.
+- Use as três skills de trabalho em .agents/skills/: montagem do contexto, curadoria e consulta. A skill brain-evaluate atende aos responsáveis pela autoria e manutenção dos fluxos; não a execute como uma etapa automática das tarefas da pessoa. Cada fluxo contém seu procedimento completo.
 - Para incorporar uma transcrição, ata, mensagem ou arquivo recebido à base, use brain-curate mesmo quando o pedido natural não citar a skill. Aplique o fluxo também a uma entrada nova em inbox/ quando a tarefa pedir sua incorporação; o arquivo recebido ainda não é conhecimento revisado.
 - Mostre uma síntese curta para conferência. Aproveite uma aceitação já dada; não peça confirmação para cada edição local reversível.
-- Salve apenas na cópia destinada ao cliente. Não grave contexto pessoal no upstream vlabsai/executive-brain-template nem no repositório comum da mentoria. Ensaios explicitamente fictícios podem usar uma pasta local isolada, sem Git.
+- Salve apenas na cópia privada destinada à pessoa. Não grave contexto pessoal no upstream vlabsai/executive-brain-template nem em um fork público. Ensaios explicitamente fictícios podem usar uma pasta local isolada, sem Git.
 
 ## Cuidar da informação
 
@@ -28,7 +28,7 @@ Este é o ponto único de regras para o assistente. Leia knowledge/perfil.md qua
 
 O vault do Obsidian é a raiz desta cópia. As relações são links Markdown entre notas existentes; proximidade na busca não cria uma relação factual. Preserve o id ao mover uma nota e atualize os links afetados.
 
-Dot coordena; o executor lê estas regras e a skill da tarefa. Cada executor precisa de seus próprios acessos, ferramentas e índice. Clonar o projeto não conecta contas nem instala modelos. Para busca, leia a [preparação do QMD](.agents/skills/brain-query/references/search.md). O assistente executa os comandos; o executivo conversa normalmente. Se a busca não estiver preparada, informe a limitação e consulte os arquivos quando isso bastar.
+Dot coordena; o executor lê estas regras e a skill da tarefa. Cada executor precisa de seus próprios acessos, ferramentas e índice. Clonar o projeto não conecta contas nem instala modelos. Para busca, leia a [preparação do QMD](.agents/skills/brain-query/references/search.md). O assistente executa os comandos; a pessoa conversa normalmente. Se a busca não estiver preparada, informe a limitação e consulte os arquivos quando isso bastar.
 
 Antes de responder pela busca, atualize o índice; depois, abra as notas atuais e confira o domínio. A coleção padrão cobre somente knowledge/, sem READMEs. Não incorpore propostas de inbox/ a respostas como fatos aceitos. Após uma alteração aceita ou um pull, atualize a busca antes de usá-la. Se a atualização falhar, não use trechos antigos.
 
@@ -36,10 +36,10 @@ Ao sincronizar no escopo autorizado: confira o remoto e sua visibilidade, preser
 
 ## Conferência proporcional
 
-Compare o que foi salvo com a fonte e mostre os caminhos reais. Uma consulta comum não precisa criar arquivo. Se a aula pedir para guardar uma consulta conferida, faça uma única nota em knowledge/, com a pergunta, fontes e correção observada.
+Compare o que foi salvo com a fonte e mostre os caminhos reais. Uma consulta comum não precisa criar arquivo. Se a pessoa pedir para guardar uma consulta conferida, faça uma única nota em knowledge/, com a pergunta, fontes e correção observada.
 
-As evals de autoria são exemplos curtos: entrada fictícia, resultado real e três pontos conferidos por quem mantém o fluxo. Corrija uma divergência se houver; não produza nota de aprovação automática, manifesto ou relatório. A conferência das notas reais com o executivo continua sendo parte das três skills de trabalho.
+As evals de autoria são exemplos curtos: entrada fictícia, resultado real e três pontos conferidos por quem mantém o fluxo. Corrija uma divergência se houver; não produza nota de aprovação automática, manifesto ou relatório. A conferência das notas reais com a pessoa continua sendo parte das três skills de trabalho.
 
-Ao alterar as instruções, skills ou scripts do template, rode python3 scripts/validate.py e os testes em scripts/. Não exija essa validação de manutenção para cada nota do executivo. Integridade dos arquivos não comprova comportamento ou acesso operacional.
+Ao alterar as instruções, skills ou scripts do template, rode python3 scripts/validate.py e os testes em scripts/. Não exija essa validação de manutenção para cada nota da pessoa. Integridade dos arquivos não comprova comportamento ou acesso operacional.
 
 Quando reorganizar notas ou preparar sua sincronização, o mesmo script aceita --notes para conferir ids ausentes ou repetidos e links locais quebrados ou externos à cópia. Essa conferência não aprova fatos, domínios ou origem; compare-os com o material consultado.

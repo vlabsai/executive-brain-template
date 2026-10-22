@@ -1,6 +1,6 @@
 interface:
   display_name: "Montar contexto"
-  short_description: "Entrevista guiada e contexto salvo na sua cópia local"
-  default_prompt: "Use $start-executive-project para me entrevistar e preencher o contexto do meu projeto nesta pasta."
+  short_description: "Contexto pessoal e profissional salvo na sua base"
+  default_prompt: "Use $start-executive-project para me entrevistar e organizar meu contexto pessoal e profissional nesta base."
 policy:
   allow_implicit_invocation: false

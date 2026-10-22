@@ -15,6 +15,6 @@ Responda de forma curta com os fatos sustentados e suas fontes. Separe interpret
 
 Quando a pergunta pedir o estado atual, compare os registros datados e siga o acompanhamento mais recente disponível. Identifique a data de referência e o que não foi confirmado depois; uma reunião histórica continua válida para explicar o que se combinou naquele momento. Não trate uma síntese como se tivesse lido todas as fontes citadas nela.
 
-Para uma conferência da aula, escolha com a pessoa uma afirmação e encontre seu suporte na origem. Se houver diferença, corrija esse ponto e releia a resposta. Se for pedido guardar o resultado, use uma única nota em knowledge/consulta-encontro-1.md, com pergunta, fontes realmente lidas e a conferência ou correção observada. Não declare revisão que não aconteceu.
+Quando for solicitada uma conferência, escolha com a pessoa uma afirmação e encontre seu suporte na origem. Se houver diferença, corrija esse ponto e releia a resposta. Se for pedido guardar o resultado, proponha uma nota com nome descritivo no local pertinente de knowledge/, seguindo as [convenções das notas](../../../knowledge/README.md). Registre a pergunta, as fontes realmente lidas e a conferência ou correção observada; reutilize uma nota existente quando for uma atualização do mesmo assunto. Não declare revisão que não aconteceu.
 
 Uma consulta comum não cria arquivo nem altera notas. Para incorporar fatos à base, use a skill de curadoria. Termine com o que foi encontrado e a informação que falta, sem presumir que houve ação externa.

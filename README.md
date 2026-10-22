@@ -1,53 +1,114 @@
-# Meu projeto de IA
+# Second Brain
 
-Comece com uma dificuldade real do trabalho. O repositório guarda as fontes permitidas e o conhecimento que você conferiu.
+Uma base pessoal de informação e conhecimento para organizar a vida e o trabalho, recuperar contexto e apoiar decisões com IA. Os arquivos Markdown são a fonte canônica: podem ser lidos, editados, versionados e usados por diferentes assistentes, sem depender do histórico de uma conversa.
 
-## Começar
+O projeto reúne fontes recebidas, conhecimento revisado e relações entre empresas, pessoas, projetos, reuniões e temas. Obsidian permite navegar por essas relações; a busca ajuda a encontrar informações pelo significado. O Dot pode coordenar as tarefas, enquanto o executor segue as instruções e skills desta cópia.
+
+## Como a informação circula
+
+```mermaid
+flowchart LR
+    F[Fontes autorizadas] --> I[inbox: entradas e propostas]
+    I -->|curadoria e revisão| K[knowledge: conhecimento aceito]
+    K --> O[Obsidian: notas e relações]
+    K --> B[Busca no executor]
+    B --> R[Resposta conferida nas notas e na origem]
+```
+
+A pessoa solicita uma coleta, organização, consulta ou atualização pela conversa. O assistente identifica o fluxo, lê as fontes disponíveis, esclarece o necessário e mostra o resultado. A curadoria confere o conteúdo antes de incorporá-lo à base; uma consulta recupera candidatos e abre as notas atuais para sustentar a resposta.
+
+Receber um arquivo não inicia processamento em segundo plano. Uma coleta usa somente o recorte autorizado e as ferramentas disponíveis naquele executor. Repetir a coleta deve reconhecer a origem e preservar correções já aceitas.
+
+## O que esta base permite fazer
+
+| Capacidade | Resultado |
+|---|---|
+| Montar e rever contexto | Perfil com responsabilidades, objetivos, preferências e origem. |
+| Receber e coletar informações | Textos, documentos ou recortes de fontes autorizadas, identificados para curadoria. |
+| Curar e relacionar conhecimento | Notas revisadas com decisões, pendências, fontes e links entre contextos. |
+| Acompanhar mudanças | Atualizar o estado de um projeto sem apagar o registro histórico de uma reunião. |
+| Consultar e conferir | Recuperar por significado ou termos exatos e responder com fontes, datas e lacunas. |
+| Navegar no Obsidian | Ler notas, seguir links e explorar backlinks e grafos nativos. |
+| Sincronizar cópias privadas | Usar Git para trocar versões aceitas; cada executor mantém seu próprio índice. |
+| Manter os fluxos | Reproduzir casos fictícios e conferir a integridade de arquivos e relações. |
+
+Agenda e tarefas continuam nas fontes operacionais escolhidas. Briefings e rotinas podem usar o conhecimento desta base quando houver um pedido e os acessos necessários. Conectores, agendamentos e ações em outros sistemas precisam ser preparados e autorizados no ambiente em que serão executados.
+
+## Estrutura do projeto
+
+```text
+brain/
+├── README.md                 visão geral e como começar
+├── AGENTS.md                 regras únicas para o assistente
+├── .agents/skills/            contexto, curadoria, consulta e testes de fluxos
+├── .obsidian/                configuração portável do cofre
+├── inbox/                    fontes recebidas e propostas em revisão
+└── knowledge/                conhecimento aceito
+    ├── empresas/             organizações e suas relações
+    ├── pessoas/              identidades e contextos de interação
+    ├── projetos/             objetivos, estado e próximos passos
+    ├── reunioes/             registros históricos revisados
+    └── temas/                assuntos pessoais e profissionais recorrentes
+
+scripts/                      busca e verificações de manutenção
+.github/workflows/            verificações no GitHub
+.local/                       estado gerado no executor, ignorado pelo Git
+```
+
+As pastas de conteúdo já vêm com READMEs. As tarefas criam as notas quando houver informação útil; não é necessário preencher a árvore inteira. A entrevista cria `knowledge/perfil.md`. Uma pessoa ou organização tem uma nota canônica, mesmo quando participa de vários contextos.
+
+As [convenções das notas](knowledge/README.md) definem identidade estável, domínios, relações e origem. `inbox/` preserva entradas e propostas; somente conteúdo aceito em `knowledge/` entra na busca padrão. Modelos, índice e originais locais não versionados ficam em `.local/`, criada conforme a necessidade do executor.
+
+## Começar sua base
 
 Com o Codex aberto, peça:
 
-> Faça um fork de https://github.com/vlabsai/executive-brain-template na minha conta e clone minha cópia. Use-a como pasta de trabalho e leia suas instruções. Reutilize minha cópia se já existir. Aguarde meu pedido para iniciar a entrevista.
+> Prepare ou reutilize minha cópia privada a partir de https://github.com/vlabsai/executive-brain-template. Confira o destino, clone a cópia e use-a como pasta de trabalho. Leia suas instruções e mostre a estrutura disponível. Preserve os arquivos que já existirem.
 
-Depois:
+Para montar seu contexto:
 
-> Use a skill start-executive-project para me entrevistar, esclarecer o que faltar e organizar meu perfil neste projeto.
+> Use a skill start-executive-project para me entrevistar, esclarecer o que faltar e organizar meu perfil nesta base.
 
-A skill aproveita o que você já contou, pergunta pelo que falta e apresenta uma síntese. Depois da conferência, cria o perfil preenchido em knowledge/perfil.md e preserva sua origem em inbox/, ou referencia a fonte que você já forneceu.
+A entrevista aproveita o relato existente, pergunta pelo que muda o resultado e apresenta uma síntese. Após a conferência, salva o perfil e preserva ou referencia sua origem. O nome da skill é um identificador de acionamento; o contexto pode cobrir responsabilidades pessoais e profissionais.
 
-O fork público serve para testes fictícios. Antes de trabalhar com dados reais, peça ao Codex que prepare um repositório privado independente a partir do template e confira o destino. O conhecimento do cliente fica nessa cópia privada.
+Depois, faça pedidos conforme a necessidade:
 
-## Pastas que já vêm no template
+- **Organizar:** “Organize este documento na minha base. Quero reencontrar as decisões, dúvidas e próximos passos. Mostre a proposta antes de incorporar.”
+- **Atualizar:** “Este registro traz uma mudança no projeto. Compare com as notas existentes, preserve o histórico e mostre o que precisa ser atualizado.”
+- **Consultar:** “O que preciso acompanhar neste projeto? Mostre as fontes, a data de referência e o que ainda falta confirmar.”
 
-| Pasta | Conteúdo |
+Forneça o texto, arquivo ou identificação da fonte autorizada. O assistente encaminha a curadoria e a consulta pelos fluxos do projeto. Se a skill não aparecer no seletor, peça que leia o `SKILL.md` correspondente nesta cópia.
+
+Use uma cópia privada para informações reais. O template público e seus forks públicos recebem somente material genérico ou fictício. Clonar o repositório não instala a busca nem conecta contas.
+
+## Fluxos disponíveis
+
+| Skill | Quando usar |
 |---|---|
-| [inbox/](inbox/README.md) | Relatos, textos e propostas que recebemos |
-| [knowledge/](knowledge/README.md) | Perfil e notas revisadas de empresas, pessoas, projetos, reuniões e temas |
+| [start-executive-project](.agents/skills/start-executive-project/SKILL.md) | Acionamento explícito para montar ou rever seu perfil e contexto. |
+| [brain-curate](.agents/skills/brain-curate/SKILL.md) | Incorporar ou atualizar informações, por pedido natural, com curadoria e revisão. |
+| [brain-query](.agents/skills/brain-query/SKILL.md) | Consultar as notas e conferir afirmações nas fontes. |
+| [brain-evaluate](.agents/skills/brain-evaluate/SKILL.md) | Quem mantém os fluxos reproduz casos fictícios e confere seu comportamento. |
 
-Essas pastas e as cinco subdivisões do conhecimento já existem no clone, com READMEs curtos. No primeiro encontro, o foco é receber uma fonte em inbox/ e conferir o perfil e uma nota em knowledge/. A organização completa fica disponível desde o início e é explorada aos poucos. A entrevista e as próximas tarefas criam notas preenchidas e ligadas entre si. Uma pessoa ou empresa tem uma nota canônica, mesmo quando participa de vários contextos.
+Os fluxos são independentes: uma consulta não exige repetir a entrevista, e curar uma informação não inicia outra atividade por conta própria. As regras compartilhadas ficam em [AGENTS.md](AGENTS.md); cada skill descreve o procedimento da sua tarefa.
 
-Para incorporar uma informação, faça um pedido natural, por exemplo: **Organize esta transcrição na minha base. Quero encontrar depois as decisões, pendências e próximos passos.** Forneça o texto da reunião e sua origem. O assistente usa o roteiro de curadoria, mostra a proposta e a incorpora depois da sua conferência. Para consultar, pergunte naturalmente, por exemplo: **O que preciso acompanhar neste projeto? Mostre as fontes e o que ainda falta confirmar.**
+## Obsidian, busca e ambientes
 
-## O que já vem no template
+Abra a raiz da cópia privada como cofre no Obsidian. Links Markdown, propriedades, backlinks e grafo funcionam com recursos nativos. A configuração foca `knowledge/` e oculta READMEs no grafo; estado de janela e preferências pessoais ficam fora do Git.
 
-- [AGENTS.md](AGENTS.md): regras únicas para o assistente.
-- .agents/skills/: os três fluxos de trabalho do executivo e o recurso de [teste para os autores dos fluxos](.agents/skills/brain-evaluate/SKILL.md).
-- Os testes de autoria reúnem casos e script dentro da própria skill: montagem do contexto, curadoria de reunião e os casos do Projeto Alfa para curadoria e consulta. Cada caso usa poucos pontos de conferência; novos casos entram no mesmo pacote.
-- scripts/ e .github/: verificações de manutenção do template.
-- .obsidian/: preferências portáveis para ler as notas e navegar pelas relações.
-- [Busca local](.agents/skills/brain-query/references/search.md): preparação do QMD e helper de atualização/consulta, executados pelo assistente. Ferramentas, modelos e índice são preparados em cada executor.
+A [busca no executor](.agents/skills/brain-query/references/search.md) usa QMD 2.8.3 com embeddings locais, sem serviço próprio. O assistente prepara ferramentas e modelos conforme essa referência. Antes de consultar, o helper atualiza o índice e os embeddings necessários; depois, o assistente abre as notas atuais para conferir o que foi recuperado. Similaridade ajuda a encontrar, mas não comprova um fato.
 
-## Ler no Obsidian
+O executor pode ser o computador pessoal ou um ambiente remoto preparado. O Dot coordena pedidos; o executor lê esta cópia, usa seus próprios acessos e executa as tarefas. Git sincroniza as notas aceitas entre cópias privadas. Credenciais, modelos e índices não são compartilhados pelo clone e precisam de preparação própria em cada ambiente. Atualizações recebidas por Git ou feitas no Obsidian precisam chegar ao índice antes da próxima consulta.
 
-Abra a raiz da cópia privada como cofre. O conhecimento continua em Markdown, e as notas apontam para a origem. No grafo, a configuração foca knowledge/ e oculta os READMEs; cores distinguem empresas, pessoas, projetos e reuniões. Abra uma nota e use o comando nativo **Abrir grafo local** para ver seu entorno. Estado das janelas e preferências pessoais ficam fora do Git. Nenhum plugin comunitário é necessário.
+## Manutenção
 
-## Preparação técnica
+Para conferir o framework e a integridade de uma base preenchida:
 
-A fundação inclui a organização das notas, Obsidian e busca com QMD 2.8.3 e embeddings locais; não existe serviço próprio. Esses fluxos foram exercitados com exemplos fictícios e em um piloto privado, incluindo coleta autorizada, execução remota e sincronização. A [referência técnica](.agents/skills/brain-query/references/search.md) explica preparação, atualização e limites. Dot coordena o fluxo no executor preparado; o clone não instala as ferramentas nem compartilha automaticamente contas, arquivos locais ou índices com outra máquina. Prepare e confira os acessos de cada aplicação. Inicialização automática, persistência entre tarefas e coleta recorrente exigem suas próprias provas quando forem usadas.
+```sh
+python3 scripts/validate.py --notes
+python3 -m unittest discover -s scripts -p 'test_*.py'
+```
 
-Se a skill não aparecer no seletor, peça ao Codex que leia o SKILL.md correspondente nesta cópia. Agenda, briefing e automação entram quando houver uma necessidade concreta.
+O validador confere recursos, ids e links; não aprova fatos ou comprova acessos. Para testar o comportamento de uma skill, use `brain-evaluate`: seus casos fictícios, critérios e preparador ficam no próprio pacote. A avaliação é acionada na manutenção dos fluxos, sem exigir relatórios ou testes a cada nota.
 
-O template e seus forks públicos recebem apenas material genérico. Use dados fictícios para testar; mantenha conteúdo pessoal na cópia local ou em destino privado autorizado. Não envie dados pessoais ao fork público.
-
-Quem mantém os fluxos pode usar brain-evaluate para reproduzir uma tarefa com dados fictícios, conferir a saída e ajustar a skill. Esse teste não é uma atividade do participante nem uma etapa automática a cada nota. Para manutenção do framework, execute python3 scripts/validate.py e python3 -m unittest discover -s scripts -p 'test_*.py'. Essa verificação não comprova acesso operacional. Atualizações do template não alteram automaticamente cópias já existentes.
-
-Para conferir a integridade de uma base preenchida, o assistente pode executar python3 scripts/validate.py --notes: verifica ids e links das notas, sem aprovar o conteúdo. As convenções e a revisão continuam nas próprias notas; não existe um cadastro paralelo.
+Mudanças do template não atualizam automaticamente cópias existentes. Compare os arquivos comuns e preserve as notas, instruções específicas e configurações da sua base antes de incorporar uma atualização.
