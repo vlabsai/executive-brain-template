@@ -8,7 +8,7 @@ import sys
 from urllib.parse import unquote
 
 ROOT = Path(__file__).resolve().parents[1]
-SKILLS = ('start-executive-project', 'brain-curate', 'brain-query', 'brain-evaluate')
+SKILLS = ('brain-onboarding', 'start-executive-project', 'brain-curate', 'brain-query', 'brain-evaluate')
 REQUIRED = ('AGENTS.md', 'README.md', 'inbox/README.md', 'knowledge/README.md',
             *('knowledge/'+name+'/README.md' for name in
               ('empresas', 'pessoas', 'projetos', 'reunioes', 'temas')))

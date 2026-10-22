@@ -43,7 +43,7 @@ def prepare(name, destination=None, root=ROOT):
     target.mkdir(parents=True, exist_ok=False)
     shutil.copyfile(root/'AGENTS.md', target/'AGENTS.md')
     # Copy maintained workflow resources, never client notes or local state.
-    for skill in dict.fromkeys(('start-executive-project', 'brain-curate', 'brain-query', case['skill'])):
+    for skill in dict.fromkeys(('brain-onboarding', 'start-executive-project', 'brain-curate', 'brain-query', case['skill'])):
         skill_path = Path('.agents/skills')/skill
         shutil.copytree(root/skill_path, target/skill_path)
     for folder in ('inbox', 'knowledge', 'knowledge/empresas', 'knowledge/pessoas',

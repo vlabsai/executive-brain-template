@@ -40,7 +40,7 @@ Agenda e tarefas continuam nas fontes operacionais escolhidas. Briefings e rotin
 brain/
 ├── README.md                 visão geral e como começar
 ├── AGENTS.md                 regras únicas para o assistente
-├── .agents/skills/            contexto, curadoria, consulta e testes de fluxos
+├── .agents/skills/            onboarding, contexto, curadoria, consulta e testes de fluxos
 ├── .obsidian/                configuração portável do cofre
 ├── inbox/                    fontes recebidas e propostas em revisão
 └── knowledge/                conhecimento aceito
@@ -65,6 +65,8 @@ Com o Codex aberto, peça:
 
 > Prepare ou reutilize minha cópia privada a partir de https://github.com/vlabsai/executive-brain-template. Confira o destino, clone a cópia e use-a como pasta de trabalho. Leia suas instruções e mostre a estrutura disponível. Preserve os arquivos que já existirem.
 
+Ao começar a trabalhar nesta cópia, as instruções acionam `brain-onboarding`. O assistente confere o ambiente, prepara o que faltar e valida uma busca com dados fictícios temporários, inclusive quando a base ainda estiver vazia. Depois retoma o seu pedido. Nas retomadas, a checagem reutiliza os recursos existentes; não há uma instalação a cada pergunta.
+
 Para montar seu contexto:
 
 > Use a skill start-executive-project para me entrevistar, esclarecer o que faltar e organizar meu perfil nesta base.
@@ -85,6 +87,7 @@ Use uma cópia privada para informações reais. O template público e seus fork
 
 | Skill | Quando usar |
 |---|---|
+| [brain-onboarding](.agents/skills/brain-onboarding/SKILL.md) | Preparação inicial e conferência do executor antes de usar a base. |
 | [start-executive-project](.agents/skills/start-executive-project/SKILL.md) | Acionamento explícito para montar ou rever seu perfil e contexto. |
 | [brain-curate](.agents/skills/brain-curate/SKILL.md) | Incorporar ou atualizar informações, por pedido natural, com curadoria e revisão. |
 | [brain-query](.agents/skills/brain-query/SKILL.md) | Consultar as notas e conferir afirmações nas fontes. |

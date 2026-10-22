@@ -83,6 +83,7 @@ class FrameworkTests(unittest.TestCase):
         self.assertFalse(any('PRIVATE_CLIENT_CANARY' in p.read_text() for p in target.rglob('*') if p.is_file()))
         self.assertFalse((target/'evals').exists())
         self.assertFalse((target/'.agents/skills/brain-evaluate').exists())
+        self.assertTrue((target/'.agents/skills/brain-onboarding/SKILL.md').is_file())
         self.assertTrue((target/'inbox/README.md').is_file())
         self.assertTrue((target/'knowledge/README.md').is_file())
         self.assertTrue((target/'knowledge/empresas/README.md').is_file())

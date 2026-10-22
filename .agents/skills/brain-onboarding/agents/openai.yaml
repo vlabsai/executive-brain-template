@@ -1,0 +1,6 @@
+interface:
+  display_name: "Preparar o Second Brain"
+  short_description: "Conferir o ambiente e preparar a busca semântica"
+  default_prompt: "Use $brain-onboarding para conferir este ambiente e preparar o Second Brain antes de trabalhar na base."
+policy:
+  allow_implicit_invocation: true

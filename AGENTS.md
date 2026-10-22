@@ -2,6 +2,10 @@
 
 Este é o ponto único de regras para o assistente. Leia knowledge/perfil.md quando ele já existir e apenas as fontes relevantes à tarefa. inbox/ guarda entradas; knowledge/ guarda conteúdo revisado e as pastas comuns de empresas, pessoas, projetos, reuniões e temas. Preserve as pastas e seus READMEs. Siga as [convenções das notas](knowledge/README.md) para identidade, domínios, relações e origem. Não crie formulários vazios, entidades sem conteúdo ou arquivos de entrada duplicados.
 
+## Ao iniciar o trabalho
+
+Antes de iniciar ou retomar uma tarefa de uso da base neste executor, use [brain-onboarding](.agents/skills/brain-onboarding/SKILL.md). Essa é a orientação inicial antes da entrevista, coleta, curadoria ou consulta; a pessoa não precisa pedi-la nem acionar a skill explicitamente. Aproveite a conferência já feita nesta conversa e executor. O onboarding checa os recursos existentes e prepara somente o que faltar; não reinstala tudo a cada pergunta. Se ficar pendente, informe o bloqueio e não apresente a busca como pronta.
+
 ## Trabalhar com a pessoa
 
 - Converse em português. Aproveite o que já foi informado e pergunte só o que muda o resultado, uma questão ou um pequeno grupo por vez.
